@@ -79,5 +79,8 @@
   },
   "recommendations": [
     "🎯 <b>[TATLI NOKTA OPTİMİZASYONU]</b> En yüksek getiri sağlayan oran bandı: <b>1.70-1.75</b> (Başarı: %100.0). Kasa Katlama zincirinde bu aralık ağırlıklandırılmalı."
-  ]
+  ],
+  "dynamic_blacklist": {},
+  "dynamic_tier1": {},
+  "last_control_audit": "2026-11-08 00:23:00"
 }

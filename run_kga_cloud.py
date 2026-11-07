@@ -129,18 +129,18 @@ def parse_kga_matches(pdf_path):
                         pass
     return all_matches
 
-def ai_filter_and_generate_report(candidate_matches, date_str, gun_str, learning_report):
+def ai_filter_and_generate_report(candidate_matches, blacklisted_candidates, blacklist_summary, date_str, gun_str, learning_report):
     """
     Yapay Zeka Süzgeci (Gemini AI Brain):
-    Matematiksel ikiz kilidi geçen maçları alır; taktiksel xG analizi, Burnley tipi
-    kapanan takımların elenmesi, çakışmasız kasa katlama ve günün altın tek maçını belirler.
+    Matematiksel ikiz kilidi geçen maçları alır; taktiksel xG analizi, dinamik kara liste,
+    kış şartları kontrolleri, çakışmasız kasa katlama ve günün altın tek maçını belirler.
     """
     try:
         from google import genai
         client = genai.Client(api_key=GEMINI_API_KEY)
         
         prompt = f"""Sen Kinetik Gol Algoritması 2.0 (KGA) Yapay Zeka Uzmanısın.
-Bugünün resmi İddaa bülteninden matematiksel İkiz Oran Kilidini (2.5 Üst 1.70-1.95 & KG Var 1.40-1.62) geçen aday maçları taktiksel xG ve tempo süzgecinden geçirerek nihai analiz raporunu hazırla.
+Bugünün resmi İddaa bülteninden matematiksel İkiz Oran Kilidini (2.5 Üst 1.70-1.95 & KG Var 1.40-1.62) geçen aday maçları taktiksel xG, dinamik kara liste ve tempo süzgecinden geçirerek nihai analiz raporunu hazırla.
 
 TARİH: {date_str} {gun_str}
 
@@ -153,16 +153,19 @@ KGA 2.0 KURALLARI VE YÖNERGELER (KGA_MANIFESTO.md):
    - Temiz maç yoksa zorlama basamak açma, 2 basamakta bırak.
 3. 🎲 SİSTEM 2-3 SKOR KUPONU:
    - KGA 1-1 barajını aşarak 2-1, 1-2, 3-1 veya 2-2 skoruna evrilecek 3 maç ve hedef skorlarını yaz.
-4. ⛔ DEFANSİF KARA LİSTE ELEMELERİ:
-   - Adaylar arasından Burnley tipi 1-0'a yatan, aşırı pragmatik/defansif veya kısır lig karakteristiğindeki maçları gerekçesiyle ele.
+4. ⛔ DİNAMİK KARA LİSTE ELEMELERİ (CANLI KONTROLLERLE ELENENLER):
+   - Aşağıda verilen elenmiş maçları ve dinamik kontrolleri kullanarak; mevsimsel kış karartmasına uğrayan ligleri (Polonya Ekstraklasa vb.), düşük oranlı/kısır Serie B ekolünü ve Burnley tipi aşırı pragmatik kapanan takımları gerekçeleriyle listele.
 5. 💎 ÖZEL FIRSAT VE PATLAMA RADARI (EKSTRA DEĞER & VALUE BET MODÜLÜ):
    - Ana omurgamız 2.5 Üst ve KG Var olmakla birlikte; bültende geçmiş oran kalıplarına ve istatistiklere dayanarak çok belirgin bir "Net Maç Sonucu (MS 1/2)", "4+ Gol / 3.5 Üst Patlaması" veya "İddaa Oran Sapması" fark ettiğin istisnai maçlar varsa bunları bu özel başlık altında gerekçesiyle paylaş.
    - Temiz bir fırsat yoksa zorlama yapma.
 
-ÖNCEKİ GÜNLERİN ALGORİTMA PERFORMANS VE ÖĞRENME RAPORU:
-{learning_report}
+GÜNCEL CANLI LİG & KARA LİSTE DENETİM TABLOSU:
+{blacklist_summary}
 
-BUGÜNÜN MATEMATİKSEL İKİZ KİLİDİ GEÇEN ADAY MAÇLARI:
+SİSTEM TARAFINDAN ÖN-DENETİMLE KARA LİSTEYE ALINIP ELENEN MAÇLAR:
+{json.dumps(blacklisted_candidates, ensure_ascii=False, indent=2)}
+
+BUGÜNÜN MATEMATİKSEL İKİZ KİLİDİ GEÇEN GÜVENLİ ADAY MAÇLARI:
 {json.dumps(candidate_matches, ensure_ascii=False, indent=2)}
 
 FORMAT KURALLARI:
@@ -225,8 +228,30 @@ def main():
     candidate_matches = parse_kga_matches(pdf_path)
     print(f"[*] Matematiksel İkiz Kilidi geçen aday maç sayısı: {len(candidate_matches)}")
     
+    # Güvenlik ve Dinamik Kara Liste Ayrıştırması
+    safe_candidates = []
+    blacklisted_candidates = []
+    for m in candidate_matches:
+        is_safe, status, reason = feedback_engine.check_match_safety(m, current_date=tr_time)
+        m["safety_status"] = status
+        m["safety_reason"] = reason
+        if is_safe:
+            safe_candidates.append(m)
+        else:
+            blacklisted_candidates.append(m)
+
+    print(f"[*] Dinamik Denetim: {len(safe_candidates)} güvenli aday, {len(blacklisted_candidates)} kara listeye alınan maç.")
+    blacklist_summary = feedback_engine.get_blacklist_and_tier_summary()
+    
     # 3. Yapay Zeka (Gemini AI Brain) Süzgecinden Geçir
-    ai_report = ai_filter_and_generate_report(candidate_matches, tarih_str, gun_str, learning_report)
+    ai_report = ai_filter_and_generate_report(
+        safe_candidates, 
+        blacklisted_candidates, 
+        blacklist_summary, 
+        tarih_str, 
+        gun_str, 
+        learning_report
+    )
     
     if ai_report and len(ai_report.strip()) > 100:
         final_message = f"{ai_report}\n\n━━━━━━━━━━━━━━━━━━━━\n{learning_report}"

@@ -53,3 +53,16 @@ Ana omurga 2.5 Üst & KG Var olmakla birlikte, yapay zekanın geçmiş bülten a
 1. **🎯 Kırılma Maçı (Net MS 1 / MS 2):** Geçmiş oran kalıpları ve xG farkına dayanarak galibiyeti netleşen, piyasa oranının üzerinde değer barındıran maçlar.
 2. **💥 Gol Şöleni (3.5 Üst / 4+ Gol / T.Gol 4-6):** 2.5 Üst oranı çok düşük kaldığı için (1.20–1.45) ana KGA bandına girmeyen, ancak iki takımın savunma kurgusunun 4 veya daha fazla gol vadeden yüksek oranlı (2.10–3.00) patlama maçları.
 3. **⚡ İddaa Oran Sapması (Bookmaker Mispricing):** İddaa risk yönetiminin form/kadro gerçekliğine ters açtığı belirgin oran anomalileri.
+
+---
+
+## 6. 🛡️ DİNAMİK KARA LİSTE VE TİER 1 CANLI DENETİM PROTOKOLÜ (CONTINUOUS RE-CALIBRATION)
+Kara listeler ve lig sıralamaları statik/sabit değildir. Her maç sonucu ve bülten denetimiyle canlı olarak güncellenir:
+1. **❄️ Mevsimsel Kış Karartması (Kasım - Şubat):**
+   * Polonya Ekstraklasa, Rusya ve Romanya alt ligleri gibi donan zeminlerde oynanan ve gol ortalaması düşen ligler kış aylarında otomatik olarak kara listeye alınır.
+2. **📉 Dinamik Düşüş Eşiği (Otomatik Kara Liste):**
+   * Son incelenen en az 3 maçta 2.5 Üst başarı oranı **%45'in altına düşen** ligler doğrudan kara listeye transfer edilir ve maçları bültenden elenir.
+3. **⭐ Dinamik Terfi Eşiği (Tier 1 Terfi):**
+   * Son maçlarında 2.5 Üst başarı oranı **%75 ve üzerine çıkan** yüksek tempolu ligler Tier 1 statüsüne terfi ettirilir ve Günün Altın Maçı havuzunda önceliklendirilir.
+4. **🔄 Rehabilitasyon ve Liste Temizliği:**
+   * Kara listedeki bir lig formunu düzeltip istatistiğini %60'ın üzerine çıkardığında kara listeden çıkarılarak gözetim moduna alınır.
