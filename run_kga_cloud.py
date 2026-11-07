@@ -146,10 +146,12 @@ TARİH: {date_str} {gun_str}
 
 KGA 2.0 KURALLARI VE YÖNERGELER (KGA_MANIFESTO.md):
 1. ⭐ GÜNÜN ALTIN TEK MAÇI (TIER 1):
-   - Adaylar arasından hücum geçişi en tempolu, lig dinamizmi en yüksek, 1-1 kesinliği en net olan SADECE 1 MAÇ seçilecek (Hedef Oran: 1.75 - 2.10 bandı, 2.5 Üst veya KG Var & 2.5 Üst hibriti).
+   - Adaylar arasından hücum geçişi en tempolu, lig dinamizmi en yüksek, 1-1 kesinliği en net olan SADECE 1 MAÇ seçilecek (Hedef Oran: 1.75 - 2.10 bandı).
+   - 🛡️ KALİBRASYON KURALI: Romanya veya İspanya alt ligleri gibi 1-1'den sonra maçı soğutan ligler Altın Maçta DÜZ 2.5 ÜST olarak seçilmez. Düz 2.5 Üst YALNIZCA 1-1'den sonra durmayan saf hücum liglerinden (Almanya 1-2, Hollanda 1-2, İsviçre vb.) seçilebilir. Diğer liglerde tercih KG Var veya KG Var & 2.5 Üst hibriti olarak kilitlenir.
    - Canlı kadro, xG ve taktiksel teşhisini maddelerle açıkla.
 2. 📈 KADEMELİ KASA KATLAMA (ROLLING BET - ÇAKIŞMASIZ ZİNCİR):
-   - Gün içinde saatleri KESİNLİKLE ÇAKIŞMAYAN (1. maç bitip kasa alındıktan sonra 2. maça geçilecek şekilde) 2 ila 3 basamaklı tek maç serisi oluştur.
+   - Gün içinde saatleri KESİNLİKLE ÇAKIŞMAYAN 2 ila 3 basamaklı seri oluştur.
+   - 🛡️ KASA KORUMASI: 1. basamakta kasanın riske girmemesi için KG Var (1.40 - 1.62) veya Tier 1 süper tempo 2.5 Üst seç. Skor koruyan liglerde çıplak 2.5 Üst riskine girme.
    - Temiz maç yoksa zorlama basamak açma, 2 basamakta bırak.
 3. 🎲 SİSTEM 2-3 SKOR KUPONU:
    - KGA 1-1 barajını aşarak 2-1, 1-2, 3-1 veya 2-2 skoruna evrilecek 3 maç ve hedef skorlarını yaz.

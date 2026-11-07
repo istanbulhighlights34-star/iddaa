@@ -4,11 +4,15 @@
 ---
 
 ## 1. TEMEL FELSEFE VE ORAN STANDARDI
-* **Hedef Bahis**: Yalnızca **2.5 Üst** (veya eşdeğer yüksek değerli hibritler).
+* **Hedef Bahis**: **2.5 Üst** veya **KG Var** (ve yüksek değerli KG Var & 2.5 Üst hibritleri).
 * **Altın Oran Bandı**: **1.70 – 1.95** (İdeal tatlı nokta: 1.75 – 1.90).
 * **İkiz Oran Kilidi (KG Var Korelasyonu)**:
   * 2.5 Üst oranı **1.70 – 1.95** arasındayken, **KG Var oranı mutlaka 1.40 – 1.62 arasında olmalıdır**.
-  * Bu kural, maçın "1-1 Kesinliğini" garantiye alır. 1-1'den sonra 90 dakikaya kadar 1 gol 2.5 Üst'ü getirir.
+  * Bu kural, maçın "1-1 Kesinliğini" garantiye alır. 
+* **🛡️ 7 KASIM KALİBRASYONU (1-1 TUZAĞI VE 3. GOL GÜVENLİK FİLTRESİ):**
+  * Backtest ve canlı sonuçlar, maçların 1-1'e kesin olarak ulaştığını (%100 isabet); ancak bazı liglerde takımların 1-1'den sonra skoru koruma psikolojisine girip 3. golü riske etmediğini kanıtlamıştır.
+  * **KURAL:** İspanya alt ligleri (Tercera/2. RFEF), Romanya gibi temkinli liglerde maç KGA'ya uysa dahi **ASLA ÇIPLAK 2.5 ÜST OYNANMAZ**; bu liglerde tercih doğrudan **KG Var (1.40–1.62)** olarak kilitlenir.
+  * **2.5 Üst Önceliği YALNIZCA SAF HÜCUM LİGLERİNE VERİLİR:** Almanya (Bundesliga 1 & 2), Hollanda (Eredivisie & Eerste Divisie), İsviçre ve Belçika. Bu ligler 1-1 olduktan sonra durmaz, 2-1, 2-2 veya 3-1'e patlar.
 
 ---
 
