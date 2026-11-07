@@ -142,5 +142,6 @@
   ],
   "dynamic_blacklist": {},
   "dynamic_tier1": {},
-  "last_control_audit": "2026-11-08 01:07:56"
+  "last_control_audit": "2026-11-08 01:07:56",
+  "league_tactical_overrides": {}
 }

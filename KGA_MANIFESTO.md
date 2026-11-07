@@ -70,3 +70,13 @@ Kara listeler ve lig sıralamaları statik/sabit değildir. Her maç sonucu ve b
    * Son maçlarında 2.5 Üst başarı oranı **%75 ve üzerine çıkan** yüksek tempolu ligler Tier 1 statüsüne terfi ettirilir ve Günün Altın Maçı havuzunda önceliklendirilir.
 4. **🔄 Rehabilitasyon ve Liste Temizliği:**
    * Kara listedeki bir lig formunu düzeltip istatistiğini %60'ın üzerine çıkardığında kara listeden çıkarılarak gözetim moduna alınır.
+
+---
+
+## 7. 🤖 TAM OTONOM SÜREKLİ KALİBRASYON YETKİSİ (AUTONOMOUS CONTINUOUS LEARNING DIRECTIVE)
+* **Kullanıcı İradesi & Açık Yetki:** Sistem, her bülten ve canlı maç sonucu sonrasında oran ağırlıklarını, kara listeleri, taktiksel lig kısıtlamalarını (KG Var zorunlulukları) ve Tier 1 terfilerini **KULLANICI ONAYI BEKLEMEKSİZİN** anında ve otonom olarak kalibre eder.
+* **Canlı Öğrenme Döngüsü:**
+  1. Maç sonuçları sisteme düştüğü an algoritma lig ve oran başarılarını yeniden tartar.
+  2. 1-1 kısırlığı yaşayan ligleri otomatik olarak "Sadece KG Var" moduna kilitler.
+  3. Kısırlaşan ligleri derhal kara listeye çeker, tempo liglerini terfi ettirir.
+  4. Güncellemeleri doğrudan kodlara ve GitHub bulutuna (`main` dalına) otomatik push ederek sisteme anında yansıtır.

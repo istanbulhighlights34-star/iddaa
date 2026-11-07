@@ -74,6 +74,9 @@ class KGAFeedbackEngine:
         if "dynamic_tier1" not in self.data:
             self.data["dynamic_tier1"] = {}
             changed = True
+        if "league_tactical_overrides" not in self.data:
+            self.data["league_tactical_overrides"] = {}
+            changed = True
         if "last_control_audit" not in self.data:
             self.data["last_control_audit"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             changed = True
@@ -227,8 +230,17 @@ class KGAFeedbackEngine:
         # Dinamik Kara Liste ve Tier 1 Otomatik Kalibrasyonu
         dynamic_blacklist = self.data.get("dynamic_blacklist", {})
         dynamic_tier1 = self.data.get("dynamic_tier1", {})
+        tactical_overrides = self.data.get("league_tactical_overrides", {})
 
         for lig, s in lig_stats.items():
+            # 1-1 Tuzağı Denetimi: KG Var yüksek ama 2.5 Üst düşükse otomatik KG_VAR_ONLY yap
+            if s["total"] >= 1 and s["kg_won"] >= 1 and s["ust_won"] == 0:
+                tactical_overrides[lig] = {
+                    "rule": "KG_VAR_ONLY",
+                    "reason": f"{lig} liginde maçlar 1-1 barajına ulaşıyor ancak 3. golü bulamıyor. Düz 2.5 Üst yasaklandı, sadece KG Var oynanacak.",
+                    "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M")
+                }
+
             if s["total"] >= 3:
                 win_rate = (s["ust_won"] / s["total"]) * 100
                 if win_rate <= 45.0:
@@ -260,6 +272,7 @@ class KGAFeedbackEngine:
 
         self.data["dynamic_blacklist"] = dynamic_blacklist
         self.data["dynamic_tier1"] = dynamic_tier1
+        self.data["league_tactical_overrides"] = tactical_overrides
         self.data["last_control_audit"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.data["recommendations"] = self._generate_recommendations(lig_stats, bracket_stats, matches)
 
@@ -332,6 +345,14 @@ class KGAFeedbackEngine:
         for k, v in dyn_t1.items():
             if k not in DEFAULT_TIER1_LEAGUES:
                 lines.append(f"  • <b>{k}</b> [TERFİ ETTİ]: Başarı %{v.get('win_rate', 0)}")
+
+        # Taktiksel Kısıtlamalar (1-1 Tuzağı Korumaları)
+        overrides = self.data.get("league_tactical_overrides", {})
+        if overrides:
+            lines.append("━━━━━━━━━━━━━━━━━━━━")
+            lines.append("🔒 <b>OTOMATİK TAKTİKSEL KORUMA (SADECE KG VAR LİGLERİ):</b>")
+            for k, v in overrides.items():
+                lines.append(f"  • <b>{k}</b>: {v.get('rule')} ({v.get('reason', '')})")
 
         return "\n".join(lines)
 
