@@ -9,6 +9,8 @@ import os
 import sys
 import json
 import time
+import re
+import unicodedata
 import urllib.request
 import urllib.parse
 from datetime import datetime
@@ -88,7 +90,11 @@ class KGAInteractiveBot:
         return matches
 
     def handle_status_inquiry(self):
-        """Verilen maçların anlık skor ve dakika durumunu hazırlar."""
+        """Verilen maçların anlık skor, tamamlanma ve KGA başarı durumunu hazırlar."""
+        # Veritabanını taze yükle
+        self.feedback_engine = KGAFeedbackEngine()
+        db_matches = self.feedback_engine.data.get("matches", [])
+        
         matches = self.get_todays_matches()
         live_events = self.score_service.fetch_all_live_events()
         
@@ -98,29 +104,68 @@ class KGAInteractiveBot:
             "━━━━━━━━━━━━━━━━━━━━"
         ]
 
+        def normalize(t):
+            nfkd = unicodedata.normalize('NFKD', str(t).lower())
+            ascii_text = ''.join([c for c in nfkd if not unicodedata.combining(c)])
+            return re.sub(r'[^a-z0-9]', '', ascii_text)
+
         for m in matches:
-            found = self.score_service.search_match_score(m["home"], m["away"], events=live_events)
+            h_norm = normalize(m["home"])
+            a_norm = normalize(m["away"])
+
+            # 1. Önce Sonuçlanmış Maçlar Veritabanında Ara
+            db_found = None
+            for db_m in db_matches:
+                db_h = normalize(db_m.get("home", ""))
+                db_a = normalize(db_m.get("away", ""))
+                if (h_norm in db_h or db_h in h_norm) and (a_norm in db_a or db_a in a_norm):
+                    db_found = db_m
+                    break
+
             lines.append(f"{m['tag']}:")
             lines.append(f"🏟️ <b>{m['home']} - {m['away']}</b>")
-            
-            if found:
-                h_score = found["home_score"]
-                a_score = found["away_score"]
-                tot = found["total_goals"]
-                detail = found["detail"] or found["clock"] or found["status"]
 
-                lines.append(f"⚡ <b>Skor:</b> {h_score} - {a_score} ({detail})")
-                
-                if tot >= 3:
-                    lines.append("🎉 <b>✅ 2.5 ÜST KAZANDI!</b> (Hedef Başarıldı)")
-                elif h_score >= 1 and a_score >= 1:
-                    lines.append("🔒 <b>⏳ 1-1 İKİZ KİLİDİ AKTİF!</b> (2.5 Üst için son 1 gol bekleniyor)")
-                elif found.get("completed"):
-                    lines.append(f"🏁 <b>Maç Sonu:</b> Toplam {tot} gol üretildi.")
+            if db_found:
+                # Maç tamamlanmış ve skoru arşivde mevcut
+                score = db_found.get("score", "-")
+                tot = db_found.get("total_goals", 0)
+                u_won = db_found.get("ust25_won", False)
+                k_won = db_found.get("kgvar_won", False)
+                u_odds = db_found.get("ust25_odds", m.get("target", ""))
+
+                lines.append(f"🏁 <b>Bitti (MS):</b> <b>{score}</b> (Toplam {tot} Gol)")
+                if u_won:
+                    lines.append(f"🎉 <b>✅ 2.5 ÜST KAZANDI!</b> (Oran: {u_odds})")
                 else:
-                    lines.append(f"⚽ <b>Canlı:</b> Maç devam ediyor ({detail}).")
+                    lines.append(f"❌ <b>2.5 Üst Gelmedi:</b> ({tot} golde kaldı)")
+                
+                if k_won:
+                    lines.append(f"🤝 <b>🔒 KG VAR GELDİ:</b> (1-1 İkiz Kilit Doğrulandı)")
+                else:
+                    lines.append(f"❌ <b>KG Var Gelmedi</b>")
+
             else:
-                lines.append("⏳ <i>Maç henüz başlamadı veya canlı skor bekleniyor.</i>")
+                # 2. Canlı Skor Servisinde Ara
+                found = self.score_service.search_match_score(m["home"], m["away"], events=live_events)
+                if found:
+                    h_score = found["home_score"]
+                    a_score = found["away_score"]
+                    tot = found["total_goals"]
+                    detail = found["detail"] or found["clock"] or found["status"]
+
+                    lines.append(f"⚡ <b>Canlı Skor:</b> <b>{h_score} - {a_score}</b> ({detail})")
+                    
+                    if tot >= 3:
+                        lines.append("🎉 <b>✅ 2.5 ÜST KAZANDI!</b> (Hedef Başarıldı)")
+                    elif h_score >= 1 and a_score >= 1:
+                        lines.append("🔒 <b>⏳ 1-1 İKİZ KİLİDİ AKTİF!</b> (2.5 Üst için son 1 gol bekleniyor)")
+                    elif found.get("completed"):
+                        lines.append(f"🏁 <b>Maç Sonu:</b> Toplam {tot} gol.")
+                    else:
+                        lines.append(f"⚽ <b>Maç Devam Ediyor:</b> ({detail})")
+                else:
+                    # Ne canlıda ne veritabanında bulunamadıysa (henüz oynanmamış veya bülten saati bekleniyor)
+                    lines.append("⏳ <i>Maç saati bekleniyor veya canlı skor akışı taranıyor.</i>")
             
             lines.append("────────────────────")
 
