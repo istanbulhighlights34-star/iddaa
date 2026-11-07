@@ -39,6 +39,6 @@ jobs:
         run: |
           git config --global user.name "KGA Autonomous AI"
           git config --global user.email "kga-bot@users.noreply.github.com"
-          git add kga_learning_db.json kga_macro_archive.json kga_tier1_matches.json archive/
+          git add kga_learning_db.json kga_macro_archive.json kga_tier1_matches.json kga_bankroll_state.json archive/
           git commit -m "KGA 2.0 Günlük Kümülatif Bülten Arşivi ve Performans Güncellendi [skip ci]" || echo "Değişiklik yok"
           git push

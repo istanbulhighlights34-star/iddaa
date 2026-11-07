@@ -36,6 +36,7 @@ def run_health_server(port):
 
 from live_score_service import LiveScoreService
 from kga_feedback_engine import KGAFeedbackEngine
+from kga_bankroll_engine import KGABankrollEngine
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "9082147299:AAEQubL7YIyr4NPS_MAoT02xixUjQ_RtiD0")
 AUTHORIZED_CHAT_ID = int(os.getenv("TELEGRAM_CHAT_ID", "664321983"))
@@ -46,6 +47,7 @@ class KGAInteractiveBot:
         self.base_url = f"https://api.telegram.org/bot{BOT_TOKEN}"
         self.score_service = LiveScoreService()
         self.feedback_engine = KGAFeedbackEngine()
+        self.bankroll_engine = KGABankrollEngine()
         self.last_update_id = 0
         self.base_dir = os.path.dirname(os.path.abspath(__file__))
 
@@ -231,8 +233,11 @@ Kullanıcıya net, samimi, profesyonel ve kısa bir yanıt ver. Yalnızca Telegr
     def process_message(self, text, chat_id):
         clean = text.strip().lower()
 
-        # 1. Canlı Skor / Durum Sorgusu
-        if any(w in clean for w in ["durum", "canlı", "skor", "ne durumda", "kaç kaç", "sonuç"]):
+        # 1. Kasa / Bakiye / Hedef Sorgusu
+        if any(w in clean for w in ["kasa", "bakiye", "para", "butce", "bütçe", "hedef", "ne kadar"]):
+            reply = self.bankroll_engine.get_bankroll_summary()
+        # 2. Canlı Skor / Durum Sorgusu
+        elif any(w in clean for w in ["durum", "canlı", "skor", "ne durumda", "kaç kaç", "sonuç"]):
             reply = self.handle_status_inquiry()
         # 2. Bülten / Kupon Sorgusu
         elif any(w in clean for w in ["bülten", "kupon", "maçlar", "tahmin", "öneri"]):

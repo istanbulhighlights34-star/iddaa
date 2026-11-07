@@ -80,3 +80,17 @@ Kara listeler ve lig sıralamaları statik/sabit değildir. Her maç sonucu ve b
   2. 1-1 kısırlığı yaşayan ligleri otomatik olarak "Sadece KG Var" moduna kilitler.
   3. Kısırlaşan ligleri derhal kara listeye çeker, tempo liglerini terfi ettirir.
   4. Güncellemeleri doğrudan kodlara ve GitHub bulutuna (`main` dalına) otomatik push ederek sisteme anında yansıtır.
+
+---
+
+## 8. 💰 100X OTONOM KASA & TAVANSIZ BİLEŞİK BÜYÜME PROTOKOLÜ (1.000 TL ➔ 100.000 TL+)
+* **Motto:** 100.000 TL hedefi sadece ilk büyük kilometre taşıdır; kâr kilitlendikçe tavansız olarak katlanarak devam eder.
+* **Kuruşu Kuruşuna Yatırım Standardı:**
+  * Her sabah bültende çıkan kuponlarda genel yüzdeler değil, **o gün kasadan kuruşu kuruşuna kaç TL yatırılacağı** açıkça belirtilir.
+  * **3 Parçalı Kasa Dağılımı:**
+    * **Kupon 1 (%50):** Ana Taşıyıcı KGA Altın Tercihi.
+    * **Kupon 2 (%30):** Saat Çakışmasız Kademeli Basamak Kuponu.
+    * **Kupon 3 (%20):** Güvenlik Kalkanı & Skor Zırhı.
+* **Otomatik Kasa Güncellemesi (Otonom Muhasebe):**
+  * Akşam maç skorları çekildiğinde kazanan kuponların kazançları otomatik olarak ana kasaya eklenir.
+  * Yeni bakiye güncellenir ve ertesi günün kupon tutarları yeni kasanın bileşik büyümesine göre otomatik yeniden hesaplanır.

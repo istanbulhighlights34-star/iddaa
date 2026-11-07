@@ -23,6 +23,7 @@ import pdfplumber
 
 from kga_feedback_engine import KGAFeedbackEngine
 from bulletin_full_evaluator import BulletinFullEvaluator
+from kga_bankroll_engine import KGABankrollEngine
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "9082147299:AAEQubL7YIyr4NPS_MAoT02xixUjQ_RtiD0")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "664321983")
@@ -262,8 +263,12 @@ def main():
         learning_report
     )
     
+    # 4. Kasa Yönetimi ve Parçalı Yatırım Planını Ekle
+    bankroll_engine = KGABankrollEngine()
+    bankroll_summary = bankroll_engine.get_bankroll_summary()
+    
     if ai_report and len(ai_report.strip()) > 100:
-        final_message = f"{ai_report}\n\n━━━━━━━━━━━━━━━━━━━━\n{learning_report}"
+        final_message = f"{ai_report}\n\n━━━━━━━━━━━━━━━━━━━━\n{bankroll_summary}\n\n━━━━━━━━━━━━━━━━━━━━\n{learning_report}"
     else:
         # Yedek mekanizma (Fallback)
         payload_file = os.path.join(base_dir, "telegram_payload.txt")
@@ -271,7 +276,7 @@ def main():
         if os.path.exists(payload_file):
             with open(payload_file, "r", encoding="utf-8") as f:
                 bulten_msg = f.read().strip()
-        final_message = f"{bulten_msg}\n\n━━━━━━━━━━━━━━━━━━━━\n{learning_report}"
+        final_message = f"{bulten_msg}\n\n━━━━━━━━━━━━━━━━━━━━\n{bankroll_summary}\n\n━━━━━━━━━━━━━━━━━━━━\n{learning_report}"
 
     send_telegram(final_message)
 
