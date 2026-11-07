@@ -22,6 +22,7 @@ from datetime import datetime, timezone, timedelta
 import pdfplumber
 
 from kga_feedback_engine import KGAFeedbackEngine
+from bulletin_full_evaluator import BulletinFullEvaluator
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "9082147299:AAEQubL7YIyr4NPS_MAoT02xixUjQ_RtiD0")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "664321983")
@@ -226,6 +227,12 @@ def main():
     if not pdf_path or not os.path.exists(pdf_path):
         print("[!] Bülten PDF'ine ulaşılamadı.")
         return
+
+    # Kümülatif Bülten Arşivleme ve Geçmiş Karşılaştırmalı Analiz Motoru
+    evaluator = BulletinFullEvaluator(archive_dir=archive_dir)
+    macro_info = evaluator.archive_and_cross_analyze(pdf_path)
+    historical_macro_report = evaluator.generate_macro_historical_summary()
+    print(f"[*] Kümülatif Arşiv Güncellendi: {macro_info['total_bulletins']} bülten, {macro_info['total_archived_matches']} toplam maç.")
         
     candidate_matches = parse_kga_matches(pdf_path)
     print(f"[*] Matematiksel İkiz Kilidi geçen aday maç sayısı: {len(candidate_matches)}")
