@@ -11,9 +11,28 @@ import json
 import time
 import re
 import unicodedata
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
 import urllib.request
 import urllib.parse
 from datetime import datetime
+
+class HealthCheckHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header("Content-type", "text/plain; charset=utf-8")
+        self.end_headers()
+        self.wfile.write(b"KGA 2.0 Telegram Bot is LIVE and running 24/7!")
+
+    def log_message(self, format, *args):
+        pass
+
+def run_health_server(port):
+    try:
+        server = HTTPServer(('0.0.0.0', port), HealthCheckHandler)
+        server.serve_forever()
+    except Exception as e:
+        print(f"[!] Health server port {port} error: {e}")
 
 from live_score_service import LiveScoreService
 from kga_feedback_engine import KGAFeedbackEngine
@@ -239,6 +258,17 @@ Kullanıcıya net, samimi, profesyonel ve kısa bir yanıt ver. Yalnızca Telegr
 
     def start_polling(self, once=False):
         print(f"[*] KGA 2.0 İnteraktif Telegram Dinleyicisi Başlatıldı. Hedef Chat ID: {AUTHORIZED_CHAT_ID}")
+        
+        # Bulut sunucuları (Render/Koyeb vb.) için HTTP Health Check servisi
+        port_env = os.getenv("PORT")
+        if port_env:
+            try:
+                p = int(port_env)
+                t = threading.Thread(target=run_health_server, args=(p,), daemon=True)
+                t.start()
+                print(f"[*] Bulut HTTP port {p} üzerinde dinleniyor (Healthcheck aktif).")
+            except Exception as e:
+                print(f"[!] Port başlatma uyarısı: {e}")
         
         while True:
             updates = self.get_updates()
