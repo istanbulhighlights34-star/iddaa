@@ -1,17 +1,14 @@
-name: KGA 2.0 Kendini Geliştiren Bulut Otomasyonu
+name: KGA 2.0 Yapay Zeka Destekli Bulut Otomasyonu
 
 on:
   schedule:
-    # SEÇENEK A (HER GÜN): Her sabah Türkiye saatiyle 09:00'da çalışır (UTC 06:00)
+    # Her sabah Türkiye saatiyle 09:00'da çalışır (UTC 06:00)
     - cron: '0 6 * * *'
-    
-    # SEÇENEK B (SADECE SALI VE CUMA BÜLTEN GÜNLERİ):
-    # - cron: '0 6 * * 2,5'
 
   workflow_dispatch: # GitHub arayüzünden tek tıkla anlık çalıştırma
 
 jobs:
-  kga_auto_pilot:
+  kga_ai_pilot:
     runs-on: ubuntu-latest
 
     permissions:
@@ -26,14 +23,15 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Bağımlılıkları Yükle
+      - name: Bağımlılıkları Yükle (PDF, Web & Gemini AI)
         run: |
-          pip install pdfplumber requests
+          pip install pdfplumber requests google-genai
 
-      - name: KGA Analizini ve Geri Besleme (Öğrenme) Motorunu Çalıştır
+      - name: KGA 2.0 Bülteni Çek, Yapay Zeka ile Süz ve Telegram'a Gönder
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || '9082147299:AAEQubL7YIyr4NPS_MAoT02xixUjQ_RtiD0' }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || '664321983' }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python run_kga_cloud.py
 

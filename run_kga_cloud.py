@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
-Kinetik Gol Algoritması 2.0 (KGA) - 7/24 Tam Otomatik & Kendini Geliştiren Bulut Motoru
-1. İddaa bültenini çeker ve KGA 2.0 İkiz Kilidini çalıştırır.
-2. Dünün maç sonuçlarını ve skorlarını analiz eder.
-3. Algoritmanın başarı oranını (2.5 Üst, KG Var, Skor) ölçer.
-4. Kural iyileştirme ve kalibrasyon önerileri üretir.
-5. Raporu ve önerileri Telegram botunuza (@ElgAnaliz_2026_bot) iletir.
+Kinetik Gol Algoritması 2.0 (KGA) - 7/24 Tam Otomatik, Yapay Zeka Destekli & Kendini Geliştiren Bulut Motoru
+1. İddaa bültenini otomatik çeker (Salı/Cuma döngüsü).
+2. 1. Aşama Matematiksel Süzgeç: İkiz Oran Kilidi (2.5 Üst 1.70-1.95 & KG Var 1.40-1.62) adaylarını çıkarır.
+3. 2. Aşama Yapay Zeka Süzgeci (Gemini AI Brain):
+   - Burnley tipi 1-0'a yatan takımları ve kısır ligleri eler.
+   - En yüksek xG ve hücum geçişi olan maçı "Günün Altın Tek Maçı (Tier 1)" seçer.
+   - Saatleri kesinlikle çakışmayan Kademeli Kasa Katlama (Rolling Bet) zincirini kurar.
+   - Sistem 2-3 Skor kombinasyonlarını üretir.
+4. 3. Aşama Geri Besleme (Feedback Engine): Dünün maç sonuçlarını ve algoritma optimizasyon önerilerini ekler.
+5. Telegram botunuza (@ElgAnaliz_2026_bot) eksiksiz teslim eder.
 """
 
 import os
@@ -21,6 +25,7 @@ from kga_feedback_engine import KGAFeedbackEngine
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "9082147299:AAEQubL7YIyr4NPS_MAoT02xixUjQ_RtiD0")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "664321983")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
 def get_turkey_time():
     utc_now = datetime.now(timezone.utc)
@@ -104,6 +109,7 @@ def parse_kga_matches(pdf_path):
                     try:
                         u = float(ust25_w[0].replace(',', '.'))
                         k = float(kgvar_w[0].replace(',', '.'))
+                        # KGA İkiz Kilidi: 2.5 Üst 1.70-1.95 & KG Var 1.40-1.62
                         if 1.70 <= u <= 1.95 and 1.40 <= k <= 1.62:
                             all_matches.append({
                                 'page': page_idx + 1,
@@ -122,6 +128,54 @@ def parse_kga_matches(pdf_path):
                     except Exception:
                         pass
     return all_matches
+
+def ai_filter_and_generate_report(candidate_matches, date_str, gun_str, learning_report):
+    """
+    Yapay Zeka Süzgeci (Gemini AI Brain):
+    Matematiksel ikiz kilidi geçen maçları alır; taktiksel xG analizi, Burnley tipi
+    kapanan takımların elenmesi, çakışmasız kasa katlama ve günün altın tek maçını belirler.
+    """
+    try:
+        from google import genai
+        client = genai.Client(api_key=GEMINI_API_KEY)
+        
+        prompt = f"""Sen Kinetik Gol Algoritması 2.0 (KGA) Yapay Zeka Uzmanısın.
+Bugünün resmi İddaa bülteninden matematiksel İkiz Oran Kilidini (2.5 Üst 1.70-1.95 & KG Var 1.40-1.62) geçen aday maçları taktiksel xG ve tempo süzgecinden geçirerek nihai analiz raporunu hazırla.
+
+TARİH: {date_str} {gun_str}
+
+KGA 2.0 KURALLARI VE YÖNERGELER (KGA_MANIFESTO.md):
+1. ⭐ GÜNÜN ALTIN TEK MAÇI (TIER 1):
+   - Adaylar arasından hücum geçişi en tempolu, lig dinamizmi en yüksek, 1-1 kesinliği en net olan SADECE 1 MAÇ seçilecek (Hedef Oran: 1.75 - 2.10 bandı, 2.5 Üst veya KG Var & 2.5 Üst hibriti).
+   - Canlı kadro, xG ve taktiksel teşhisini maddelerle açıkla.
+2. 📈 KADEMELİ KASA KATLAMA (ROLLING BET - ÇAKIŞMASIZ ZİNCİR):
+   - Gün içinde saatleri KESİNLİKLE ÇAKIŞMAYAN (1. maç bitip kasa alındıktan sonra 2. maça geçilecek şekilde) 2 ila 3 basamaklı tek maç serisi oluştur.
+   - Temiz maç yoksa zorlama basamak açma, 2 basamakta bırak.
+3. 🎲 SİSTEM 2-3 SKOR KUPONU:
+   - KGA 1-1 barajını aşarak 2-1, 1-2, 3-1 veya 2-2 skoruna evrilecek 3 maç ve hedef skorlarını yaz.
+4. ⛔ DEFANSİF KARA LİSTE ELEMELERİ:
+   - Adaylar arasından Burnley tipi 1-0'a yatan, aşırı pragmatik/defansif veya kısır lig karakteristiğindeki maçları gerekçesiyle ele.
+
+ÖNCEKİ GÜNLERİN ALGORİTMA PERFORMANS VE ÖĞRENME RAPORU:
+{learning_report}
+
+BUGÜNÜN MATEMATİKSEL İKİZ KİLİDİ GEÇEN ADAY MAÇLARI:
+{json.dumps(candidate_matches, ensure_ascii=False, indent=2)}
+
+FORMAT KURALLARI:
+- Yalnızca Telegram HTML etiketleri kullan (<b>, <i>, <code>, <u>). Asla Markdown (#, **, *) veya <div>/<p> kullanma.
+- Çıktı doğrudan Telegram mesajı olarak gönderilecektir, profesyonel emojili ve net formatla üret.
+"""
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=prompt
+        )
+        if response and response.text:
+            print("[✓] Yapay zeka (Gemini AI) süzme ve raporlama sürecini başarıyla tamamladı.")
+            return response.text
+    except Exception as e:
+        print(f"[!] Yapay zeka süzgeci çağrılırken hata: {e}")
+    return None
 
 def send_telegram(text):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
@@ -148,7 +202,7 @@ def main():
     tarih_str = tr_time.strftime("%d.%m.%Y")
     gun_str = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"][tr_time.weekday()]
     
-    print(f"[*] KGA 2.0 Analiz & Geri Besleme Motoru Başlatıldı: {tarih_str} {gun_str}")
+    print(f"[*] KGA 2.0 Yapay Zeka Motoru Başlatıldı: {tarih_str} {gun_str} (Saat: {tr_time.strftime('%H:%M')})")
     
     base_dir = os.path.dirname(os.path.abspath(__file__))
     archive_dir = os.path.join(base_dir, "archive")
@@ -157,15 +211,31 @@ def main():
     feedback_engine = KGAFeedbackEngine()
     learning_report = feedback_engine.generate_daily_learning_report()
     
-    # 2. Bülten Analizini Yükle
-    payload_file = os.path.join(base_dir, "telegram_payload.txt")
-    bulten_msg = ""
-    if os.path.exists(payload_file):
-        with open(payload_file, "r", encoding="utf-8") as f:
-            bulten_msg = f.read().strip()
-            
-    # 3. İki Raporu Birleştir ve Gönder
-    final_message = f"{bulten_msg}\n\n━━━━━━━━━━━━━━━━━━━━\n{learning_report}"
+    # 2. Bülten PDF'ini Al ve Matematiksel Süzgeci Çalıştır
+    filename, url, bulletin_date = get_active_bulletin_info(tr_time)
+    pdf_path = ensure_bulletin_pdf(filename, url, archive_dir)
+    
+    if not pdf_path or not os.path.exists(pdf_path):
+        print("[!] Bülten PDF'ine ulaşılamadı.")
+        return
+        
+    candidate_matches = parse_kga_matches(pdf_path)
+    print(f"[*] Matematiksel İkiz Kilidi geçen aday maç sayısı: {len(candidate_matches)}")
+    
+    # 3. Yapay Zeka (Gemini AI Brain) Süzgecinden Geçir
+    ai_report = ai_filter_and_generate_report(candidate_matches, tarih_str, gun_str, learning_report)
+    
+    if ai_report and len(ai_report.strip()) > 100:
+        final_message = f"{ai_report}\n\n━━━━━━━━━━━━━━━━━━━━\n{learning_report}"
+    else:
+        # Yedek mekanizma (Fallback)
+        payload_file = os.path.join(base_dir, "telegram_payload.txt")
+        bulten_msg = ""
+        if os.path.exists(payload_file):
+            with open(payload_file, "r", encoding="utf-8") as f:
+                bulten_msg = f.read().strip()
+        final_message = f"{bulten_msg}\n\n━━━━━━━━━━━━━━━━━━━━\n{learning_report}"
+
     send_telegram(final_message)
 
 if __name__ == "__main__":
