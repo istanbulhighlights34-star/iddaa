@@ -1,0 +1,83 @@
+{
+  "matches": [
+    {
+      "bulletin": "06-11-2026-Bulten.pdf",
+      "date": "06.11.2026",
+      "lig": "SÜPL",
+      "home": "GAZİANTEP FK",
+      "away": "KASIMPAŞA",
+      "ust25_odds": 1.72,
+      "kgvar_odds": 1.57,
+      "score": "2-2",
+      "total_goals": 4,
+      "ust25_won": true,
+      "kgvar_won": true,
+      "both_won": true
+    },
+    {
+      "bulletin": "06-11-2026-Bulten.pdf",
+      "date": "06.11.2026",
+      "lig": "HRV2L",
+      "home": "DİNAMO ZAGREB II",
+      "away": "NK JADRAN LP",
+      "ust25_odds": 1.72,
+      "kgvar_odds": 1.56,
+      "score": "3-1",
+      "total_goals": 4,
+      "ust25_won": true,
+      "kgvar_won": true,
+      "both_won": true
+    },
+    {
+      "bulletin": "06-11-2026-Bulten.pdf",
+      "date": "06.11.2026",
+      "lig": "POR2",
+      "home": "AVS FUTEBOL SAD",
+      "away": "FC VİZELA",
+      "ust25_odds": 1.75,
+      "kgvar_odds": 1.58,
+      "score": "1-2",
+      "total_goals": 3,
+      "ust25_won": true,
+      "kgvar_won": true,
+      "both_won": true
+    }
+  ],
+  "lig_stats": {
+    "SÜPL": {
+      "total": 1,
+      "ust_won": 1,
+      "kg_won": 1,
+      "both_won": 1
+    },
+    "HRV2L": {
+      "total": 1,
+      "ust_won": 1,
+      "kg_won": 1,
+      "both_won": 1
+    },
+    "POR2": {
+      "total": 1,
+      "ust_won": 1,
+      "kg_won": 1,
+      "both_won": 1
+    }
+  },
+  "odds_bracket_stats": {
+    "1.70-1.75": {
+      "total": 3,
+      "won": 3
+    },
+    "1.76-1.85": {
+      "total": 0,
+      "won": 0
+    },
+    "1.86-1.95": {
+      "total": 0,
+      "won": 0
+    }
+  },
+  "recommendations": [
+    "🎯 <b>[TATLI NOKTA OPTİMİZASYONU]</b> En yüksek getiri sağlayan oran bandı: <b>1.70-1.75</b> (Başarı: %100.0). Kasa Katlama zincirinde bu aralık ağırlıklandırılmalı."
+  ]
+}

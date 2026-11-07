@@ -1,0 +1,46 @@
+name: KGA 2.0 Kendini Geliştiren Bulut Otomasyonu
+
+on:
+  schedule:
+    # SEÇENEK A (HER GÜN): Her sabah Türkiye saatiyle 09:00'da çalışır (UTC 06:00)
+    - cron: '0 6 * * *'
+    
+    # SEÇENEK B (SADECE SALI VE CUMA BÜLTEN GÜNLERİ):
+    # - cron: '0 6 * * 2,5'
+
+  workflow_dispatch: # GitHub arayüzünden tek tıkla anlık çalıştırma
+
+jobs:
+  kga_auto_pilot:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # Öğrenme veritabanını depoya geri kaydetmek için yazma izni
+
+    steps:
+      - name: Depoyu Klonla
+        uses: actions/checkout@v4
+
+      - name: Python Ortamını Kur
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Bağımlılıkları Yükle
+        run: |
+          pip install pdfplumber requests
+
+      - name: KGA Analizini ve Geri Besleme (Öğrenme) Motorunu Çalıştır
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || '9082147299:AAEQubL7YIyr4NPS_MAoT02xixUjQ_RtiD0' }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || '664321983' }}
+        run: |
+          python run_kga_cloud.py
+
+      - name: Öğrenme Verilerini ve Skor Karnesini Kaydet (Kalıcı Hafıza)
+        run: |
+          git config --global user.name "KGA Autonomous AI"
+          git config --global user.email "kga-bot@users.noreply.github.com"
+          git add kga_learning_db.json kga_tier1_matches.json
+          git commit -m "KGA 2.0 Öğrenme ve Performans Veritabanı Güncellendi [skip ci]" || echo "Değişiklik yok"
+          git push
