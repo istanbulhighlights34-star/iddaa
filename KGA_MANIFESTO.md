@@ -45,3 +45,11 @@
 * Her sabah **09:00'da** resmi İddaa bayi bülteni indirilir.
 * KGA 2.0 süzgecinden geçirilir.
 * `send_telegram.py` betiği üzerinden kullanıcının Telegram botuna (`@ElgAnaliz_2026_bot`) anlık bildirimle iletilir.
+
+---
+
+## 5. 💎 ÖZEL FIRSAT VE PATLAMA RADARI (EKSTRA DEĞER & VALUE BET MODÜLÜ)
+Ana omurga 2.5 Üst & KG Var olmakla birlikte, yapay zekanın geçmiş bülten analizleri ve oran anomalileri üzerinden yakaladığı istisnai fırsatlar Telegram bültenine ek bir bölüm olarak sunulur:
+1. **🎯 Kırılma Maçı (Net MS 1 / MS 2):** Geçmiş oran kalıpları ve xG farkına dayanarak galibiyeti netleşen, piyasa oranının üzerinde değer barındıran maçlar.
+2. **💥 Gol Şöleni (3.5 Üst / 4+ Gol / T.Gol 4-6):** 2.5 Üst oranı çok düşük kaldığı için (1.20–1.45) ana KGA bandına girmeyen, ancak iki takımın savunma kurgusunun 4 veya daha fazla gol vadeden yüksek oranlı (2.10–3.00) patlama maçları.
+3. **⚡ İddaa Oran Sapması (Bookmaker Mispricing):** İddaa risk yönetiminin form/kadro gerçekliğine ters açtığı belirgin oran anomalileri.

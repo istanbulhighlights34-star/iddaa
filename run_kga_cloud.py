@@ -155,6 +155,9 @@ KGA 2.0 KURALLARI VE YÖNERGELER (KGA_MANIFESTO.md):
    - KGA 1-1 barajını aşarak 2-1, 1-2, 3-1 veya 2-2 skoruna evrilecek 3 maç ve hedef skorlarını yaz.
 4. ⛔ DEFANSİF KARA LİSTE ELEMELERİ:
    - Adaylar arasından Burnley tipi 1-0'a yatan, aşırı pragmatik/defansif veya kısır lig karakteristiğindeki maçları gerekçesiyle ele.
+5. 💎 ÖZEL FIRSAT VE PATLAMA RADARI (EKSTRA DEĞER & VALUE BET MODÜLÜ):
+   - Ana omurgamız 2.5 Üst ve KG Var olmakla birlikte; bültende geçmiş oran kalıplarına ve istatistiklere dayanarak çok belirgin bir "Net Maç Sonucu (MS 1/2)", "4+ Gol / 3.5 Üst Patlaması" veya "İddaa Oran Sapması" fark ettiğin istisnai maçlar varsa bunları bu özel başlık altında gerekçesiyle paylaş.
+   - Temiz bir fırsat yoksa zorlama yapma.
 
 ÖNCEKİ GÜNLERİN ALGORİTMA PERFORMANS VE ÖĞRENME RAPORU:
 {learning_report}
