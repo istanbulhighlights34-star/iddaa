@@ -42,3 +42,12 @@
 * **Bot:** `@ElgAnaliz_2026_bot`
 * **Token:** `9082147299:AAEQubL7YIyr4NPS_MAoT02xixUjQ_RtiD0`
 * **Yetkili Chat ID:** `664321983`
+
+### [8 Kasım 2026 Pazar 12:10 TSİ] Kritik Takvim ve Bülten Düzeltmesi (Pazar Maçları Ayrıştırması)
+- **Sorun:** 6-9 Kasım ortak bülteni tek bir PDF'te (1-3. sayfalar Cuma, 4-7. sayfalar Cumartesi, 8-10. sayfalar Pazar) yer aldığı ve kod sayfa başlığındaki gün filtresini denetlemediği için ilk sayfalardaki geçmiş Cuma/Cumartesi maçları (Farul, Lucena) bültene girmişti.
+- **Kökten Çözüm:**
+  1.  içine sayfa başlığı gün denetçisi () eklendi. Yalnızca 8 Kasım Pazar gününe ait maçlar (20 aday) çekildi.
+  2. Eski güne ait statik yedek metin mekanizması tamamen kaldırıldı; yerine bugünün gerçek Pazar maçlarından anlık dinamik rapor üreten  kuruldu.
+  3. Günün Altın Maçı olarak Fransa Ligue 1 **Brest - Lyon (19:15)**, Kasa Katlama zinciri olarak saatleri çakışmayan **Estoril - Maritimo (18:30)**, **CE Manresa - Barcelona B (20:00)** ve **SD Aucas - Independiente del Valle (21:45)** seçildi.
+  4. Telegram bülteni anında @ElgAnaliz_2026_bot kanalına iletildi.
+  5. Tüm düzeltmeler GitHub  dalına commit edilip pushlandı.
