@@ -220,10 +220,17 @@ KGA 2.0 Mantığı:
 
 Kullanıcıya net, samimi, profesyonel ve kısa bir yanıt ver. Yalnızca Telegram HTML etiketleri (<b>, <i>, <code>) kullan."""
             
-            resp = client.models.generate_content(
-                model="gemini-2.5-flash",
-                contents=prompt
-            )
+            model_name = "gemini-3.8-flash"
+            try:
+                resp = client.models.generate_content(
+                    model=model_name,
+                    contents=prompt
+                )
+            except Exception:
+                resp = client.models.generate_content(
+                    model="gemini-2.0-flash",
+                    contents=prompt
+                )
             if resp and resp.text:
                 return resp.text
         except Exception as e:

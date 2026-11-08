@@ -176,10 +176,19 @@ FORMAT KURALLARI:
 - Yalnızca Telegram HTML etiketleri kullan (<b>, <i>, <code>, <u>). Asla Markdown (#, **, *) veya <div>/<p> kullanma.
 - Çıktı doğrudan Telegram mesajı olarak gönderilecektir, profesyonel emojili ve net formatla üret.
 """
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=prompt
-        )
+        model_name = "gemini-3.8-flash"
+        try:
+            response = client.models.generate_content(
+                model=model_name,
+                contents=prompt
+            )
+        except Exception as m_err:
+            print(f"[!] {model_name} hatası, alternatif model deneniyor: {m_err}")
+            response = client.models.generate_content(
+                model="gemini-2.0-flash",
+                contents=prompt
+            )
+
         if response and response.text:
             print("[✓] Yapay zeka (Gemini AI) süzme ve raporlama sürecini başarıyla tamamladı.")
             return response.text
