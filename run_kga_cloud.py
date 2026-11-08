@@ -263,8 +263,7 @@ def build_deterministic_kga_report(all_matches, blacklisted_candidates, tarih_st
 
     alt35_candidates.sort(key=lambda x: x[0])
     k1_matches = [m for _, m in alt35_candidates[:3]]
-    if len(k1_matches) < 3:
-        k1_matches = all_matches[:3]
+    has_k1 = len(k1_matches) >= 3
 
     k1_odds = 1.0
     for m in k1_matches:
@@ -307,12 +306,14 @@ def build_deterministic_kga_report(all_matches, blacklisted_candidates, tarih_st
         "<i>Kural: 10 farklı skorda (0-0 dan 2-1 e) firesiz kazandırır. İddaa MBS 3 kuralına %100 uyumludur.</i>"
     ]
 
-    for i, m in enumerate(k1_matches, 1):
-        o = m.get('alt35', '1.25')
-        lines.append(f"• <b>{i}. Maç (MBS {m.get('mbs', 3)}):</b> {m.get('home')} - {m.get('away')} ({m.get('lig', '')} - {m.get('saat', '')}) ➔ <b>3.5 ALT ({o})</b>")
-
-    lines.append(f'🎯 <b>Toplam Kupon Oranı:</b> <b>{k1_odds:.2f}</b>')
-    lines.append('💰 <b>Yatırım Payı (%50):</b> <b>500 TL</b> (Kasanın Sarsılmaz Taşıyıcısı)')
+    if len(k1_matches) >= 3:
+        for i, m in enumerate(k1_matches, 1):
+            o = m.get('alt35', '1.25')
+            lines.append(f"• <b>{i}. Maç (MBS {m.get('mbs', 3)}):</b> {m.get('home')} - {m.get('away')} ({m.get('lig', '')} - {m.get('saat', '')}) ➔ <b>3.5 ALT ({o})</b>")
+        lines.append(f'🎯 <b>Toplam Kupon Oranı:</b> <b>{k1_odds:.2f}</b>')
+        lines.append('💰 <b>Yatırım Payı (%50):</b> <b>500 TL</b> (Kasanın Sarsılmaz Taşıyıcısı)')
+    else:
+        lines.append('🛡️ <i>Bugün bültende 3.5 Alt kriterlerimize tam uyan güvenli maç bulunamadı. Zorlama kupon yapılmadı, bu kupon <b>PAS GEÇİLDİ / KASA KORUNDU</b>.</i>')
     lines.append('')
     lines.append('━━━━━━━━━━━━━━━━━━━━')
     lines.append('')
@@ -326,7 +327,7 @@ def build_deterministic_kga_report(all_matches, blacklisted_candidates, tarih_st
         lines.append('🔍 <i>Teşhis:</i> Favori takımın kalite farkı ve tempolu hücum gücü ile handikap barajını aşması bekleniyor.')
         lines.append('💰 <b>Yatırım Payı (%30):</b> <b>300 TL</b> (Değerli Çarpan Hedefi)')
     else:
-        lines.append('• Bugün için net handikap avantajı veren büyük maç fırsatı taranıyor.')
+        lines.append('🛡️ <i>Bugün büyük maçlarda net handikap avantajı veren maç bulunamadı. Zorlama yapılmadı, bu kupon <b>PAS GEÇİLDİ / KASA KORUNDU</b>.</i>')
 
     lines.append('')
     lines.append('━━━━━━━━━━━━━━━━━━━━')

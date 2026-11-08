@@ -52,3 +52,11 @@ Tek bir maça kasanın %50'sini basma riski kalkmıştır. 1.000 TL kasa için d
 ## 4. GERİ BESLEME VE CANLI TAKİP
 Telegram botu (@ElgAnaliz_2026_bot) her sabah 09:00'da bu 3 sütunu otomatik yayınlar.
 Günün maçları bittiğinde skorları anlık denetler ve kasayı kuruşu kuruşuna büyütür.
+
+---
+
+## 5. ALTIN KURAL: ZORLAMA MAÇ OYNAMAMA VE PAS GEÇME DİSİPLİNİ
+* **Kural:** Maç olacak diye illaki maç bulmaya çalışılmaz.
+* Bültendeki maçlar kalite, defansif istikrar veya oran güvenliği kriterlerini karşılamıyorsa o gün veya o kategori **PAS GEÇİLİR**.
+* Telegram raporunda: *"Bugün bültende güvenlik kriterlerimize uygun maç bulunamamıştır. Kasa korunmuş ve pas geçilmiştir. Sermaye korumak en büyük kazançtır."* bildirimi geçilir.
+* Kasa dokunulmaz kalır; zayıf günlerde para eritilmez.
