@@ -8,11 +8,11 @@
       "away": "KASIMPAŞA",
       "ust25_odds": 1.72,
       "kgvar_odds": 1.57,
-      "score": "2-2",
-      "total_goals": 4,
-      "ust25_won": true,
-      "kgvar_won": true,
-      "both_won": true
+      "score": "0-2",
+      "total_goals": 2,
+      "ust25_won": false,
+      "kgvar_won": false,
+      "both_won": false
     },
     {
       "bulletin": "06-11-2026-Bulten.pdf",
