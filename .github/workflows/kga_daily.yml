@@ -1,18 +1,20 @@
-name: KGA 2.0 Yapay Zeka Destekli Bulut Otomasyonu
+name: KGA 3.0 Bulut Otomasyonu (Sabah Bülteni & Gün Sonu Raporu)
 
 on:
   schedule:
-    # Her sabah Türkiye saatiyle 09:00'da çalışır (UTC 06:00)
+    # 1. Sabah 09:00 TSİ (06:00 UTC) -> Günlük Bülten
     - cron: '0 6 * * *'
+    # 2. Gece 23:55 TSİ (20:55 UTC) -> Gün Sonu Kapanış ve Kasa Raporu
+    - cron: '55 20 * * *'
 
-  workflow_dispatch: # GitHub arayüzünden tek tıkla anlık çalıştırma
+  workflow_dispatch: # Manuel anlık tetikleme
 
 jobs:
-  kga_ai_pilot:
+  kga_orchestrator:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write # Öğrenme veritabanını depoya geri kaydetmek için yazma izni
+      contents: write
 
     steps:
       - name: Depoyu Klonla
@@ -23,23 +25,31 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Bağımlılıkları Yükle (PDF, Web & Gemini AI)
+      - name: Bağımlılıkları Yükle
         run: |
           pip install pdfplumber requests google-genai
 
-      - name: KGA 2.0 Bülteni Çek, Yapay Zeka ile Süz ve Telegram'a Gönder
+      - name: KGA Görevini Çalıştır
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN || '9082147299:AAEQubL7YIyr4NPS_MAoT02xixUjQ_RtiD0' }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || '664321983' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          python run_kga_cloud.py
+          # UTC saatine göre sabah mı gece mi olduğunu anla
+          CURRENT_HOUR=$(date -u +"%H")
+          if [ "$CURRENT_HOUR" -ge 18 ] || [ "$CURRENT_HOUR" -le 2 ]; then
+            echo "[*] Gece Kapanış Seansı: Gün Sonu Raporu çalıştırılıyor..."
+            python run_kga_eod_report.py
+          else
+            echo "[*] Sabah Seansı: Günlük KGA Bülteni çalıştırılıyor..."
+            python run_kga_cloud.py
+          fi
 
-      - name: Öğrenme Verilerini, Kümülatif Arşivi ve Bültenleri Kaydet (Kalıcı Hafıza)
+      - name: Verileri ve Defteri Depoya Geri Kaydet (Kalıcı Hafıza)
         if: always()
         run: |
           git config --global user.name "KGA Autonomous AI"
           git config --global user.email "kga-bot@users.noreply.github.com"
           git add -A
-          git commit -m "KGA 2.0 Günlük Kümülatif Bülten Arşivi ve Performans Güncellendi [skip ci]" || echo "Değişiklik yok"
+          git commit -m "KGA 3.0 Günlük Rapor ve Kasa Defteri Güncellendi [skip ci]" || echo "Değişiklik yok"
           git push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" HEAD:main || git push || echo "Push pas geçildi"

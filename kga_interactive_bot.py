@@ -230,6 +230,10 @@ Kullanıcıya net, samimi, profesyonel ve kısa bir yanıt ver. Yalnızca Telegr
     def process_message(self, text, chat_id):
         clean = text.strip().lower()
 
+        # 0. Gün Sonu Raporu / Kasa Defteri Sorgusu
+        if any(w in clean for w in ["rapor", "gün sonu", "gun sonu", "kapanış", "kapanis", "defter", "özet", "sonuçlar"]):
+            from run_kga_eod_report import generate_eod_report
+            reply = generate_eod_report()
         # 1. Kasa / Bakiye / Hedef Sorgusu
         if any(w in clean for w in ["kasa", "bakiye", "para", "butce", "bütçe", "hedef", "ne kadar"]):
             reply = self.bankroll_engine.get_bankroll_summary()
