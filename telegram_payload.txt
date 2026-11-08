@@ -1,52 +1,77 @@
 ⚽ <b>KİNETİK GOL ALGORİTMASI 2.0 (KGA) - GÜNLÜK BÜLTEN RAPORU</b>
-📅 <b>Tarih:</b> 7 Kasım 2026 Cumartesi
+📅 <b>Tarih:</b> 08.11.2026 Pazar (BUGÜN)
 ⚡ <b>Model:</b> KGA 2.0 Backtest Kalibreli (İkiz Kilit & xG Süzgeci)
 ━━━━━━━━━━━━━━━━━━━━
 
 ⭐ <b>GÜNÜN ALTIN TEK MAÇI (TIER 1)</b>
-🏟️ <b>Maç:</b> Farul Constanta - Rapid Bükreş 1923
-🏆 <b>Lig:</b> Romanya Liga 1 (18:30)
-🎯 <b>Öncelikli Tercih:</b> 2.5 Üst (<b>1.71</b>) / Hibrit: KG Var & 2.5 Üst (<b>1.95</b>)
-🔒 <b>KGA İkiz Kilit:</b> 2.5 Üst <b>1.71</b> | KG Var <b>1.57</b> [KİLİT ONAYLANDI]
+🏟️ <b>Maç:</b> BREST - LYON
+🏆 <b>Lig:</b> FR1 (Saat 19:15C)
+🎯 <b>Öncelikli Tercih:</b> 2.5 Üst (<b>1.73</b>) / Hibrit: KG Var & 2.5 Üst (<b>1.95</b>)
+🔒 <b>KGA İkiz Kilit:</b> 2.5 Üst <b>1.73</b> | KG Var <b>1.58</b> [KİLİT ONAYLANDI]
 
-🔍 <b>Kinetik Analiz & Canlı 2026 Kadro Teşhisi:</b>
-• <i>Tempo Uyumu:</i> Gheorghe Hagi'nin Farul'u sahasında yüksek ofansif baskı kurar. Rapid Bükreş ise ligin en tehlikeli geçiş hücumu takımıdır; asla skora yatmaz.
-• <i>xG & Gol Dinamiği:</i> İki takımın aralarındaki son 5 maçın 4'ü KG Var ve 2.5 Üst ile sonuçlanmıştır. Defans hatları bireysel hataya açık, hücum hatları tam kadro sahadadır.
-• <i>1-1 Kesinliği:</i> Karşılıklı gol beklentisi (KG Var 1.57) maçın ikinci yarıya taşınmadan çift taraflı skor üretmesini destekler.
+🔍 <b>Kinetik Analiz & Taktiksel Teşhis:</b>
+• <i>Tempo & xG:</i> Fransa Ligue 1'in en dinamik geçiş hücumu takımlarından Lyon, deplasmanda yüksek riskli pres kurgusuyla oynar. Brest ise iç sahada duran toplar ve kanat akınlarıyla ligin en çok ceza sahası aksiyonu üreten takımlarındandır.
+• <i>1-1 Kesinliği:</i> Karşılıklı gol beklentisi (KG Var 1.58) maçın erken dakikalardan itibaren çift taraflı skor üretmesini destekler.
+• <i>Taktik Koruması:</i> Romanya/İspanya alt liglerindeki 1-1 kilitlenme riskine karşı, Fransa Ligue 1 gibi elit tempolu lig seçilmiştir.
 
 ━━━━━━━━━━━━━━━━━━━━
 
 📈 <b>KADEMELİ KASA KATLAMA (ROLLING BET - ÇAKIŞMASIZ AKŞAM SEANSI)</b>
 <i>Kural: Maç saatleri asla çakışmaz; 1. maçın kazancı tam kasa 2. maça devredilir.</i>
 
-🔹 <b>1. BASAMAK (Saat 18:30 - 20:20)</b>
-• <b>Maç:</b> Farul Constanta - Rapid Bükreş 1923 (Romanya Liga 1)
-• <b>Bahis:</b> 2.5 Üst
-• <b>Oran:</b> 1.71 (KG Var: 1.57)
-• <i>Gerekçe:</i> Akşam seansının en temiz KGA ikiz kilit maçı.
+🔹 <b>1. BASAMAK (Saat 18:30C - 20:20)</b>
+• <b>Maç:</b> ESTORİL PRAİA - 1 MARİTİMO (PORP)
+• <b>Bahis:</b> KG Var
+• <b>Oran:</b> 1.61 (2.5 Üst: 1.75)
+• <i>Gerekçe:</i> Akşam seansı kasa açılışı; Portekiz ekolünde karşılıklı skor üretimi en yüksek KGA adayı.
 
-🔹 <b>2. BASAMAK (Saat 21:00 - 22:50)</b>
-• <b>Maç:</b> Ciudad de Lucena - CD Badajoz (İspanya Tercera RFEF)
-• <b>Bahis:</b> 2.5 Üst
-• <b>Oran:</b> 1.83 (KG Var: 1.62)
-• <i>Gerekçe:</i> 1. basamak 20:20'de tamamlandıktan sonra kasayı devralacak yüksek tempolu akşam maçı.
+🔹 <b>2. BASAMAK (Saat 20:00 - 21:50)</b>
+• <b>Maç:</b> CE MANRESA - BARCELONA B (İSPS)
+• <b>Bahis:</b> KG Var (veya 2.5 Üst)
+• <b>Oran:</b> 1.57 (2.5 Üst: 1.7)
+• <i>Gerekçe:</i> 1. basamak 20:20'de tamamlandıktan sonra kasayı devralacak Katalan gençlik hücum hattı maçı.
 
-🔹 <b>3. BASAMAK (Saat 22:45 - Kapanış)</b>
-• <b>Maç:</b> RAAL La Louvière - Cercle Brugge (Belçika Pro League)
-• <b>Bahis:</b> 2.5 Üst (veya KG Var)
-• <b>Oran:</b> 1.69 / 1.55 (KG Var & 2.5 Üst: 1.95)
-• <i>Gerekçe:</i> Belçika ligi öncelikli dinamik tempo ekolü. Kasa 2 basamakta kilitlenmezse son basamak olarak değerlendirilir.
+🔹 <b>3. BASAMAK (Saat 21:45C - Kapanış)</b>
+• <b>Maç:</b> SD AUCAS - INDEPENDİENTE DEL VALLE (EKPRO)
+• <b>Bahis:</b> 2.5 Üst
+• <b>Oran:</b> 1.7 (KG Var: 1.56)
+• <i>Gerekçe:</i> Ekvador Pro Ligi yüksek rakım ve açık alan geçiş hücumu; gecenin kasayı katlayacak kapanış maçı.
 
 ━━━━━━━━━━━━━━━━━━━━
 
 🎲 <b>SİSTEM 2-3 SKOR KUPONU (YÜKSEK DEĞER VURGUSU)</b>
 <i>KGA 1-1 barajını aşarak 2-1 / 3-1 / 2-2 bandına evrilmesi beklenen eşleşmeler:</i>
 
-1️⃣ <b>Farul Constanta - Rapid Bükreş:</b> Skor <b>1-2</b> veya <b>2-1</b> (Oran ~7.80 - 8.50)
-2️⃣ <b>US Pergolettese - AC Renate:</b> Skor <b>2-1</b> veya <b>2-2</b> (Oran ~8.20 - 11.00)
-3️⃣ <b>RAAL La Louvière - Cercle Brugge:</b> Skor <b>1-2</b> veya <b>2-2</b> (Oran ~7.40 - 9.20)
+1️⃣ <b>BREST - LYON:</b> Skor <b>1-2</b> veya <b>2-1</b> (Oran ~7.80 - 8.50)
+2️⃣ <b>ESTORİL PRAİA - 1 MARİTİMO:</b> Skor <b>2-1</b> veya <b>1-1</b> (Oran ~7.20 - 8.00)
+3️⃣ <b>SD AUCAS - INDEPENDİENTE DEL VALLE:</b> Skor <b>2-2</b> veya <b>1-2</b> (Oran ~8.50 - 11.00)
 
 ━━━━━━━━━━━━━━━━━━━━
 
 ⛔ <b>KGA 2.0 DEFANSİF KARA LİSTE ELEMELERİ</b>
-• <i>Elenenler:</i> Göztepe - Başakşehir (2.5 Üst 1.48 ile KGA 1.70 tabanının altında), Mantova - Verona (Serie B kısır tempo riski), Zaragoza - Huesca (Segunda kapanan defans kurgusu).
+• <i>İtalya Serie B & C Kısır Ekol:</i> Carrarese - Sampdoria ve Vicenza - Cremonese maçları defansif pragmatizm riskiyle elendi.
+• <i>Düşük Oranlı/Riskli Alt Ligler:</i> KGA İkiz Kilidini sağlasa dahi temposu garanti olmayan maçlar elendi.
+
+━━━━━━━━━━━━━━━━━━━━
+💰 <b>KGA 100X OTONOM KASA & BİLEŞİK BÜYÜME RAPORU</b>
+🎯 <b>Mevcut Kasa:</b> <b>1,000.00 TL</b>
+📈 <b>Başlangıç:</b> 1,000 TL | <b>Net Kâr:</b> +0.00 TL
+🏆 <b>1. Hedef:</b> 100,000 TL+ <i>(Tavansız Büyüme)</i>
+📊 <b>İlerleme:</b> [░░░░░░░░░░] <b>%1.00</b> (Basamak: <b>#1</b>)
+━━━━━━━━━━━━━━━━━━━━
+📋 <b>GÜNÜN KURUŞU KURUŞUNA YATIRIM DAĞILIMI:</b>
+🔹 <b>Kupon 1 (Ana Taşıyıcı %50):</b> <b>500 TL</b>
+🔹 <b>Kupon 2 (Kademeli %30):</b> <b>300 TL</b>
+🔹 <b>Kupon 3 (Güvenlik Zırhı %20):</b> <b>200 TL</b>
+━━━━━━━━━━━━━━━━━━━━
+💡 <i>Kuponlar her sabah 09:00 bülteniyle otomatik doldurulur ve maçlar bittiğinde kasa otomatik artar.</i>
+
+━━━━━━━━━━━━━━━━━━━━
+📊 <b>KGA 2.0 KENDİNİ GELİŞTİREN ALGORİTMA PERFORMANS RAPORU</b>
+📈 Toplam İncelenen KGA Maçı: <b>6</b>
+✅ 2.5 Üst İsabeti: <b>%50.0</b> (3/6)
+🤝 KG Var İsabeti: <b>%83.3</b> (5/6)
+🔥 İkiz Kilit (Hem 2.5Ü hem KG): <b>%50.0</b> (3/6)
+━━━━━━━━━━━━━━━━━━━━
+🧠 <b>CANLI KONTROLLER & KALİBRASYON:</b>
+• 🎯 <b>[ORAN TATLI NOKTASI]</b> En yüksek isabet: <b>1.70-1.75</b> (Başarı: %75.0).
