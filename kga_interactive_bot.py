@@ -42,6 +42,41 @@ BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "9082147299:AAEQubL7YIyr4NPS_MAoT02x
 AUTHORIZED_CHAT_ID = int(os.getenv("TELEGRAM_CHAT_ID", "664321983"))
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
 
+def run_daily_scheduler():
+    """Render veya yerelde 7/24 çalışırken 09:00 ve 23:55'te otomatik bülten ve gün sonu raporu gönderir."""
+    last_morning_sent = ""
+    last_night_sent = ""
+    print("[*] [SCHEDULER] 7/24 Otomatik Zamanlayıcı Başlatıldı (09:00 Bülten & 23:55 Gün Sonu).")
+    while True:
+        try:
+            utc_now = datetime.now(timezone.utc)
+            tr_time = utc_now + timedelta(hours=3)
+            today_str = tr_time.strftime("%d.%m.%Y")
+            curr_hm = tr_time.strftime("%H:%M")
+
+            # 1. Sabah 09:00 Bülteni
+            if curr_hm == "09:00" and last_morning_sent != today_str:
+                print(f"[*] [SCHEDULER] Sabah 09:00 bülteni otomatik tetikleniyor ({today_str})...")
+                try:
+                    import run_kga_cloud
+                    run_kga_cloud.main()
+                    last_morning_sent = today_str
+                except Exception as e:
+                    print(f"[!] Sabah bülteni tetikleme hatası: {e}")
+
+            # 2. Gece 23:55 Gün Sonu Raporu
+            if curr_hm == "23:55" and last_night_sent != today_str:
+                print(f"[*] [SCHEDULER] Gece 23:55 Gün Sonu Raporu otomatik tetikleniyor ({today_str})...")
+                try:
+                    import run_kga_eod_report
+                    run_kga_eod_report.main()
+                    last_night_sent = today_str
+                except Exception as e:
+                    print(f"[!] Gece raporu tetikleme hatası: {e}")
+        except Exception as err:
+            print(f"[!] Scheduler döngü hatası: {err}")
+        time.sleep(20)
+
 class KGAInteractiveBot:
     def __init__(self):
         self.base_url = f"https://api.telegram.org/bot{BOT_TOKEN}"
@@ -265,6 +300,10 @@ Kullanıcıya net, samimi, profesyonel ve kısa bir yanıt ver. Yalnızca Telegr
     def start_polling(self, once=False):
         print(f"[*] KGA 2.0 İnteraktif Telegram Dinleyicisi Başlatıldı. Hedef Chat ID: {AUTHORIZED_CHAT_ID}")
         
+        # 09:00 ve 23:55 için bağımsız arka plan zamanlayıcısı başlat
+        sched_thread = threading.Thread(target=run_daily_scheduler, daemon=True)
+        sched_thread.start()
+
         # Bulut sunucuları (Render/Koyeb vb.) için HTTP Health Check servisi
         port_env = os.getenv("PORT")
         if port_env:

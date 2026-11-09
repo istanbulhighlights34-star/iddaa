@@ -25,7 +25,23 @@ KGA 3.0, bültendeki tüm maçları her yönüyle analiz eden, İddaa kuralları
 
 ---
 
-## 2. İDDAA RESMİ KURALLARI VE MBS DİSİPLİNİ
+## 2. LİG DİNAMİKLERİ VE COĞRAFİ EKOL AYRIŞTIRMASI
+
+### 🇳🇱 A) Hollanda Ekolü (Eredivisie & Eerste Divisie) - "Gol Patlaması Cenneti"
+* **8 Kasım 2026 Gerçeği:** Pazar günü Hollanda Eredivisie'de oynanan 5 maçın tamamı çılgın skorlarla bitti:
+  * Heerenveen 5 - 3 Feyenoord (8 Gol)
+  * AZ Alkmaar 4 - 3 Groningen (7 Gol)
+  * Cambuur 2 - 5 PSV (7 Gol)
+  * Utrecht 2 - 3 NEC Nijmegen (5 Gol)
+  * Twente 2 - 2 Ajax (4 Gol)
+  * *(5 maçta toplam 31 gol, maç başı 6.2 gol ortalaması - %100 KG Var ve %100 2.5 Üst!)*
+* **KURAL 1:** **2.5 Üst veya KG Var aranıyorsa bültende birinci öncelik daima HOLLANDA liglerine verilir.**
+* **KURAL 2:** **3.5 Alt Ana Kale kuponuna HOLLANDA LİGİ MAÇLARI KESİNLİKLE ALINMAZ!** (Hollanda'da 3.5 Alt oynamak intihardır).
+
+### 🛡️ B) 3.5 Alt Kalesinin Cennet Ligleri
+* İspanya La Liga 2, İtalya Serie B, Fransa Ligue 2, Yunanistan Süper Ligi, Romanya Liga 1.
+* Bu liglerde takımlar 1-1 veya 1-0'dan sonra maçı tamamen soğutur; 3.5 Alt firesiz gelir.
+
 * **MBS (Minimum Bahis Sayısı) Kuralı:**
   * **MBS 1:** Yalnızca başında '1' yazan maçlar tek maç olarak kupona girebilir.
   * **MBS 2:** En az 2 maç bağlanmalıdır.

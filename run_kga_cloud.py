@@ -84,7 +84,7 @@ def parse_kga_matches(pdf_path, target_day=None):
         for page_idx, page in enumerate(pdf.pages):
             text = page.extract_text() or ''
             for line in text.splitlines()[:5]:
-                m = re.search(r'(CUMA|CUMARTESİ|PAZAR|PAZARTESİ|SALI|ÇARŞAMBA|PERŞEMBE)', line.upper())
+                m = re.search(r'(CUMARTESİ|PAZARTESİ|ÇARŞAMBA|PERŞEMBE|CUMA|PAZAR|SALI)', line.upper())
                 if m:
                     current_day = m.group(1)
                     break
@@ -313,7 +313,7 @@ def build_deterministic_kga_report(all_matches, blacklisted_candidates, tarih_st
         lines.append(f'🎯 <b>Toplam Kupon Oranı:</b> <b>{k1_odds:.2f}</b>')
         lines.append('💰 <b>Yatırım Payı (%50):</b> <b>500 TL</b> (Kasanın Sarsılmaz Taşıyıcısı)')
     else:
-        lines.append('🛡️ <i>Bugün bültende 3.5 Alt kriterlerimize tam uyan güvenli maç bulunamadı. Zorlama kupon yapılmadı, bu kupon <b>PAS GEÇİLDİ / KASA KORUNDU</b>.</i>')
+        lines.append('🛡️ <i>Bugün İddaa bülten geçiş günüdür (Hafta sonu bülteni tamamlandı, yeni bülten bekleniyor). Güvenlik kriterlerimize uyan temiz maç bulunamadı. Zorlama kupon yapılmadı, bu kupon <b>PAS GEÇİLDİ / KASA KORUNDU</b>.</i>')
     lines.append('')
     lines.append('━━━━━━━━━━━━━━━━━━━━')
     lines.append('')

@@ -1,82 +1,26 @@
-🤖 <b>KİNETİK GOL ALGORİTMASI 2.0 (KGA) GÜNLÜK İSTİHBARAT RAPORU</b>
-📅 <b>Tarih:</b> 08.11.2026 | Pazar
-⚡ <b>Sürüm:</b> KGA-v2.0 / Dinamik xG ve İkiz Oran Kilidi Filtresi
+⚽ <b>KİNETİK GOL ALGORİTMASI 3.0 (KGA) - 360° ÇOK YÖNLÜ BÜLTEN RAPORU</b>
+📅 <b>Tarih:</b> 09.11.2026 Pazartesi
+⚡ <b>Model:</b> KGA 3.0 (3.5 Alt Ana Kale & 360° Handikap Radarı)
+━━━━━━━━━━━━━━━━━━━━
+
+🏰 <b>1. KUPON: "ANA KALE" (3.5 ALT GÜVENCE KOMBİNİ)</b>
+<i>Kural: 10 farklı skorda (0-0 dan 2-1 e) firesiz kazandırır. İddaa MBS 3 kuralına %100 uyumludur.</i>
+🛡️ <i>Bugün İddaa bülten geçiş günüdür (Hafta sonu bülteni tamamlandı, yeni bülten bekleniyor). Güvenlik kriterlerimize uyan temiz maç bulunamadı. Zorlama kupon yapılmadı, bu kupon <b>PAS GEÇİLDİ / KASA KORUNDU</b>.</i>
 
 ━━━━━━━━━━━━━━━━━━━━
 
-⭐ <b>1. GÜNÜN ALTIN TEK MAÇI (TIER 1 - SAF HÜCUM DİNAMİĞİ)</b>
-
-🏟️ <b>Brest - Lyon</b>
-🏆 <b>Lig:</b> Fransa Ligue 1 (FRA1 - Tier 1 Onaylı)
-⏰ <b>Saat:</b> 19:15
-🎯 <b>Tercih:</b> 2.5 Gol Üstü
-💰 <b>Oran:</b> 1.73 (KG Var Destekli İkiz Kilit: 1.58)
-
-📊 <b>Kinetik Teşhis ve xG Raporu:</b>
-• <b>Lig Dinamizmi:</b> Fransa Ligue 1, KGA 2.0 kural matrisinde Tier 1 "Hücum Geçişi Kesintisiz" kategorisindedir. 1-1 skorundan sonra skoru koruma psikolojisine girmeyen, dikine hücum eden yapıya sahiptir.
-• <b>Taktiksel Baskı:</b> Lyon deplasmanlarda arka hat boşluklarını geniş bırakan agresif pres uygularken; Brest iç sahada kenar ortaları ve duran top varyasyonlarıyla maç başına 1.65 xG üretmektedir.
-• <b>Kilit Eşleşme:</b> Lyon'un hücum geçişlerindeki bitiricilik kalitesi ile Brest'in geçiş savunmasındaki adam paylaşım zafiyeti 1-1 barajını maçın ilk 60 dakikasında kırmaya son derece uygundur.
+⚡ <b>2. KUPON: 360° BÜYÜK MAÇ & HANDİKAP RADARI</b>
+🛡️ <i>Bugün büyük maçlarda net handikap avantajı veren maç bulunamadı. Zorlama yapılmadı, bu kupon <b>PAS GEÇİLDİ / KASA KORUNDU</b>.</i>
 
 ━━━━━━━━━━━━━━━━━━━━
 
-📈 <b>2. KADEMELİ KASA KATLAMA (ROLLING BET - ÇAKIŞMASIZ ZİNCİR)</b>
-<i>(Saatleri birbiriyle kesinlikle çakışmayan, korumalı dinamik seri)</i>
-
-🔹 <b>1. Basamak (Saat 17:00):</b>
-• <b>Maç:</b> NK Brinje Grosuplje - NK Aluminij Kidricevo (Slovenya)
-• <b>Tercih:</b> Karşılıklı Gol Var (KG Var)
-• <b>Oran:</b> 1.59
-• <i>KGA Notu: Kasa koruma kuralı gereği 1. basamakta skor riskine girilmemiş, iki takımın da düzenli skor üreten açık profilinden KG Var emniyet kilidi seçilmiştir.</i>
-
-🔹 <b>2. Basamak (Saat 19:15):</b>
-• <b>Maç:</b> Brest - Lyon (Fransa Ligue 1)
-• <b>Tercih:</b> Karşılıklı Gol Var (KG Var)
-• <b>Oran:</b> 1.58
-• <i>KGA Notu: 1. basamak 18:50 civarı sonuçlandıktan sonra başlayan, Ligue 1 kalitesinde her iki ekibin tabelayı değiştirme yüzdesi %80'in üzerindedir.</i>
-
-🔹 <b>3. Basamak (Saat 21:45):</b>
-• <b>Maç:</b> SD Aucas - Independiente del Valle (Ekvador Pro)
-• <b>Tercih:</b> Karşılıklı Gol Var (KG Var)
-• <b>Oran:</b> 1.56
-• <i>KGA Notu: 2. basamak 21:05 civarı bittikten sonra başlayan gece seansı. Aucas'ın iç saha yüksek irtifa hücumu ile IDV'nin lig standartlarının üstündeki bitiricilik kalitesi.</i>
+💎 <b>3. KUPON: SÜRPRİZ DEĞER & FIRSAT AVCISI</b>
+🏟️ <b>Maç:</b>  -  ()
+🎯 <b>Öneri:</b> KG Var (<b>1.60</b>) veya 2.5 Üst (<b>1.75</b>)
+💰 <b>Yatırım Payı (%20):</b> <b>200 TL</b> (Ekstra Getiri)
 
 ━━━━━━━━━━━━━━━━━━━━
-
-🎲 <b>3. SİSTEM 2-3 SKOR KUPONU (1-1 BARAJINI AŞANLAR)</b>
-
-KGA algoritmasında 1-1 eşitliğini aşarak üst skora evrilme potansiyeli en yüksek 3 eşleşme:
-
-1️⃣ <b>Brest - Lyon (19:15)</b>
-🎯 <b>Hedef Skor:</b> 1-2 veya 2-2
-
-2️⃣ <b>Estoril Praia - Maritimo (18:30)</b>
-🎯 <b>Hedef Skor:</b> 2-1
-
-3️⃣ <b>SD Aucas - Independiente del Valle (21:45)</b>
-🎯 <b>Hedef Skor:</b> 1-2 veya 2-1
-
-━━━━━━━━━━━━━━━━━━━━
-
-⛔ <b>4. DİNAMİK KARA LİSTE ELEMELERİ (SÜZGECE TAKILANLAR)</b>
-
-Bültende ikiz oran kalıbına girmiş görünmesine rağmen KGA 2.0 algoritması tarafından elenen maçlar:
-
-❌ <b>Carrarese - Sampdoria & LR Vicenza - Cremonese (İtalya Serie B):</b>
-<i>Gerekçe:</i> KGA Aktif Kara Liste kuralı (İTB). Taktiksel faul sıklığı, topun oyunda kalma süresinin düşüklüğü ve 1-0'dan sonra gelişen pragmatik blok savunması.
-❌ <b>OFI Crete - Atromitos (Yunanistan Süper Lig):</b>
-<i>Gerekçe:</i> YUN1 savunma sertliği ve düşük tempo endeksi. Hücum aksiyonlarının duran toplara sıkışması nedeniyle elenmiştir.
-❌ <b>Sepsi OS SF - Voluntari (Romanya Liga 1):</b>
-<i>Gerekçe:</i> ROM1 Kasım ayı ağır zemin riski ve 1-1'den sonra maçı soğutma eğilimi. Çıplak üst baremi güven vermemektedir.
-❌ <b>İspanya ve İtalya Alt Ligleri (İSPS / İTSC Grubu):</b>
-<i>Gerekçe:</i> CD Arnedo, Marino de Luanco, CA Central, Ourense, Sambenedettese ve Caratese maçları düşük xG üretimi ve aşırı kapanan düşük tempolu yapıları nedeniyle filtreden geçememiştir.
-
-━━━━━━━━━━━━━━━━━━━━
-
-💎 <b>5. ÖZEL FIRSAT VE PATLAMA RADARI (VALUE / ORAN SAPMASI)</b>
-
-💣 <b>Estoril Praia - Maritimo (18:30)</b>
-• <b>Piyasa Sapması:</b> Estoril'in iç saha geçiş temposu ile Maritimo'nun deplasman savunma zaafları kıyaslandığında; deplasman ekibinin kalesinde gördüğü pozisyon sayısı lig ortalamasının çok üzerindedir.
-• <b>Değer Teşhisi:</b> 2.5 Üst (1.75) ve KG Var (1.61) oranları bir arada değerlendirildiğinde maçın <b>1-1 barajını aşıp 3. gole uzanma ihtimali</b> matematiksel modelde %64 olarak hesaplanmıştır. 2-1 veya 3-1 yönünde skor patlamasına açıktır.
+🛡️ <b>MBS & İDDAA GÜVENCESİ:</b> Bültendeki maçların MBS şartları tam olarak gözetilmiştir. Tek maça kasanın %50'sini basma riski kaldırılmıştır.
 
 ━━━━━━━━━━━━━━━━━━━━
 💰 <b>KGA 100X OTONOM KASA & BİLEŞİK BÜYÜME RAPORU</b>
@@ -93,11 +37,4 @@ Bültende ikiz oran kalıbına girmiş görünmesine rağmen KGA 2.0 algoritmas�
 💡 <i>Kuponlar her sabah 09:00 bülteniyle otomatik doldurulur ve maçlar bittiğinde kasa otomatik artar.</i>
 
 ━━━━━━━━━━━━━━━━━━━━
-📊 <b>KGA 2.0 KENDİNİ GELİŞTİREN ALGORİTMA PERFORMANS RAPORU</b>
-📈 Toplam İncelenen KGA Maçı: <b>6</b>
-✅ 2.5 Üst İsabeti: <b>%50.0</b> (3/6)
-🤝 KG Var İsabeti: <b>%83.3</b> (5/6)
-🔥 İkiz Kilit (Hem 2.5Ü hem KG): <b>%50.0</b> (3/6)
-━━━━━━━━━━━━━━━━━━━━
-🧠 <b>CANLI KONTROLLER & KALİBRASYON:</b>
-• 🎯 <b>[ORAN TATLI NOKTASI]</b> En yüksek isabet: <b>1.70-1.75</b> (Başarı: %75.0).
+Henüz sonuçlanmış maç kaydı bulunmamaktadır.

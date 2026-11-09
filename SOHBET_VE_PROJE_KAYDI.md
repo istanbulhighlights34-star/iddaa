@@ -43,7 +43,13 @@
 * **Token:** `9082147299:AAEQubL7YIyr4NPS_MAoT02xixUjQ_RtiD0`
 * **Yetkili Chat ID:** `664321983`
 
-### [8 Kasım 2026 Pazar 12:10 TSİ] Kritik Takvim ve Bülten Düzeltmesi (Pazar Maçları Ayrıştırması)
+### [9 Kasım 2026 Pazartesi 00:30 TSİ] KGA 3.0 Resmi Yeni Başlangıç
+- Kasa 1.000 TL olarak sıfırlandı.
+- Eski test verileri ve geçmiş maçlar silinerek temiz sayfa açıldı.
+- 3.5 Alt Ana Kale ve 360° Handikap modeli devreye alındı.
+- Pas geçme ve zorlama kupon yapmama disiplini kural olarak mühürlendi.
+- Gece 23:55 otomatik Gün Sonu Kapanış ve Kasa Defteri raporu kuruldu.
+
 - **Sorun:** 6-9 Kasım ortak bülteni tek bir PDF'te (1-3. sayfalar Cuma, 4-7. sayfalar Cumartesi, 8-10. sayfalar Pazar) yer aldığı ve kod sayfa başlığındaki gün filtresini denetlemediği için ilk sayfalardaki geçmiş Cuma/Cumartesi maçları (Farul, Lucena) bültene girmişti.
 - **Kökten Çözüm:**
   1.  içine sayfa başlığı gün denetçisi () eklendi. Yalnızca 8 Kasım Pazar gününe ait maçlar (20 aday) çekildi.
