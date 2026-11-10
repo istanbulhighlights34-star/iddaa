@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "home": "BRİSTOL ROVERS",
+    "away": "READİNG",
+    "tag": "🏰 Ana Kale (MBS 3)",
+    "target": "3.5 Alt (1,34)",
+    "saat": "22:00C"
+  },
+  {
+    "home": "BURTON ALBİON",
+    "away": "1 NOTTS COUNTY",
+    "tag": "🏰 Ana Kale (MBS 3)",
+    "target": "3.5 Alt (1,32)",
+    "saat": "22:00C"
+  },
+  {
+    "home": "CREWE ALEXANDRA",
+    "away": "1 WİGAN ATHLETİC",
+    "tag": "🏰 Ana Kale (MBS 3)",
+    "target": "3.5 Alt (1,29)",
+    "saat": "22:00C"
+  }
+]
