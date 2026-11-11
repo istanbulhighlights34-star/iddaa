@@ -1,33 +1,80 @@
-⚽ <b>KİNETİK GOL ALGORİTMASI 3.0 (KGA) - 360° ÇOK YÖNLÜ BÜLTEN RAPORU</b>
-📅 <b>Tarih:</b> 10.11.2026 Salı
-⚡ <b>Model:</b> KGA 3.0 (3.5 Alt Ana Kale & 360° Handikap Radarı)
-━━━━━━━━━━━━━━━━━━━━
+⚡ <b>KİNETİK GOL ALGORİTMASI 2.0 (KGA) GÜNLÜK RAPORU</b>
+📅 <b>Tarih:</b> 11.11.2026 Çarşamba
+🛡️ <b>Denetim Modülü:</b> KGA Canlı xG, Dinamik Kara Liste & İkiz Oran Süzgeci
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🏰 <b>1. KUPON: "ANA KALE" (3.5 ALT GÜVENCE KOMBİNİ)</b>
-<i>Kural: 10 farklı skorda (0-0 dan 2-1 e) firesiz kazandırır. İddaa MBS 3 kuralına %100 uyumludur.</i>
-• <b>1. Maç (MBS 3):</b> NORTHAMPTON - 1 GİLLİNGHAM (İEFK - 22:00C) ➔ <b>3.5 ALT (1,26)</b>
-• <b>2. Maç (MBS 3):</b> CREWE ALEXANDRA - 1 WİGAN ATHLETİC (İEFK - 22:00C) ➔ <b>3.5 ALT (1,29)</b>
-• <b>3. Maç (MBS 3):</b> BURTON ALBİON - 1 NOTTS COUNTY (İEFK - 22:00C) ➔ <b>3.5 ALT (1,32)</b>
-🎯 <b>Toplam Kupon Oranı:</b> <b>2.15</b>
-💰 <b>Yatırım Payı (%50):</b> <b>500 TL</b> (Kasanın Sarsılmaz Taşıyıcısı)
+⭐ <b>GÜNÜN ALTIN TEK MAÇI (TIER 1)</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚽ <b>Maç:</b> Ermenistan - Kıbrıs Rum Kesimi
+🏆 <b>Lig:</b> UEFA Uluslar Ligi (ULUS) | <b>Saat:</b> 20:00
+🎯 <b>Tavsiye Edilen Tercih:</b> 2.5 Üst
+📊 <b>Oran:</b> 1.87 <i>(KGA Hedef Bandı: 1.75 - 2.10)</i>
 
-━━━━━━━━━━━━━━━━━━━━
+🔍 <b>Taktiksel ve Kinetik Teşhis:</b>
+• <b>1-1 Kinetik Kırılması:</b> Ermenistan iç sahada yüksek savunma hattı ve agresif geçiş presiyle oynayan bir yapıya sahip. Kıbrıs Rum Kesimi'nin açık alandaki doğrudan geçiş tehdidi maçı erken bir 1-1 sekansına taşıyacak yapıdadır.
+• <b>xG ve Alan Analizi:</b> Her iki ekibin turnuva geneli gol beklentisi (xG) toplamı 2.75 bandındadır. Ermenistan'ın merkez savunma zaafları ve Kıbrıs'ın duran top etkinliği 2.5 barajının aşılmasını tetikleyen ana unsurdur.
+• <b>Kalibrasyon Uyumu:</b> Puan tablosu dinamiği gereği beraberliğin iki tarafa da yaramayacağı bu eşleşmede, 1-1'den sonra oyun rölantiye alınmayacak, risk alan tarafın arkada bıraktığı geniş koridorlar 3. golü getirecektir.
 
-⚡ <b>2. KUPON: 360° BÜYÜK MAÇ & HANDİKAP RADARI</b>
-🏟️ <b>Maç:</b> REAL MADRİD (K) - 1 PARİS FC (K) (KŞMPL - 20:45C) [MBS 1 - TEK MAÇ OYNANABİLİR]
-🎯 <b>Öneri:</b> Handikaplı Maç Sonucu <b>H1 (1.75)</b> (Net Galibiyet / En Az 2 Fark)
-🔍 <i>Teşhis:</i> Favori takımın kalite farkı ve tempolu hücum gücü ile handikap barajını aşması bekleniyor.
-💰 <b>Yatırım Payı (%30):</b> <b>300 TL</b> (Değerli Çarpan Hedefi)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📈 <b>KADEMELİ KASA KATLAMA (ROLLING BET - ÇAKIŞMASIZ ZİNCİR)</b>
+<i>(Saatleri birbiriyle kesinlikle çakışmayan, kasanın devredilmesine olanak tanıyan 2 basamaklı temiz zincir)</i>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-━━━━━━━━━━━━━━━━━━━━
+🔹 <b>1. BASAMAK (Saat: 20:45)</b>
+• <b>Maç:</b> OH Leuven (K) - HB Koege (K) (KŞMPL)
+• <b>Tercih:</b> KG Var
+• <b>Oran:</b> 1.44
+• <b>Kasa Koruma Gerekçesi:</b> Koege'nin ofansif kanat akınlarına Leuven'in ev sahibi baskısıyla cevap vereceği net bir maç. Kasa başlangıcında 1.40 - 1.62 güvenli liman kuralı eksiksiz uygulanmıştır. (Maç bitişi ~22:35).
 
-💎 <b>3. KUPON: SÜRPRİZ DEĞER & FIRSAT AVCISI</b>
-🏟️ <b>Maç:</b> BARNET - 1 LEYTON ORİENT (İEFK)
-🎯 <b>Öneri:</b> KG Var (<b>1,27</b>) veya 2.5 Üst (<b>1,31</b>)
-💰 <b>Yatırım Payı (%20):</b> <b>200 TL</b> (Ekstra Getiri)
+--- <i>Kasa Devri & 25 Dakika Güvenlik Tamponu</i> ---
 
-━━━━━━━━━━━━━━━━━━━━
-🛡️ <b>MBS & İDDAA GÜVENCESİ:</b> Bültendeki maçların MBS şartları tam olarak gözetilmiştir. Tek maça kasanın %50'sini basma riski kaldırılmıştır.
+🔹 <b>2. BASAMAK (Saat: 23:00)</b>
+• <b>Maç:</b> SL Benfica (K) - FK Austria Wien (K) (KŞMPL)
+• <b>Tercih:</b> KG Var
+• <b>Oran:</b> 1.48
+• <b>Kasa Koruma Gerekçesi:</b> Benfica'nın açık ofansif baskısına karşılık Austria Wien'in hızlı geçiş hücumları devrede olacaktır. İki takımın da kalesini gole kapatma oranı %25'in altındadır.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎲 <b>SİSTEM 2-3 SKOR KUPONU (KGA 1-1 BARAJI AŞANLAR)</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+<i>1-1 barajını aşıp 3. ve 4. gole evrilmesi matematiksel olarak en yüksek 3 maç:</i>
+
+1️⃣ <b>Sheffield Wednesday - Accrington (22:00)</b>
+• <b>Hedef Skorlar:</b> <code>2-1</code> / <code>3-1</code>
+• <b>Dinamik:</b> Sheffield Wednesday evinde ağır tempo üstünlüğü kurar; Accrington savunma arkası zaaflarından gol bulsa da maçı tutamaz.
+
+2️⃣ <b>OH Leuven (K) - HB Koege (K) (20:45)</b>
+• <b>Hedef Skorlar:</b> <code>1-2</code> / <code>2-2</code>
+• <b>Dinamik:</b> İskandinav ekibinin deplasman temposu maçı yüksek temaslı karşılıklı düelloya çevirir.
+
+3️⃣ <b>SL Benfica (K) - FK Austria Wien (K) (23:00)</b>
+• <b>Hedef Skorlar:</b> <code>2-1</code> / <code>1-2</code>
+• <b>Dinamik:</b> Portekiz temsilcisinin savunma geçiş zafiyeti Avusturya ekibine skor alanı açar.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⛔ <b>DİNAMİK KARA LİSTE ELEMELERİ (CANLI KONTROLLERLE ELENENLER)</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🚫 <b>Juventus (K) - O. Lyon (K) (23:00):</b>
+• <i>Eleme Sebebi:</i> Juventus'un aşırı pragmatik 1-0 blok kurgusu ve Lyon'un kontrollü deplasman yönetimi sebebiyle KGA Kara Liste filtresine takılmış ve kupon dışı bırakılmıştır.
+
+🚫 <b>Afrika Uluslar Kupası Elemeleri (AFRE Fikstürü - 18:00 & 19:00 & 22:00):</b>
+<i>(Demokratik Kongo - Sierra Leone, Ekvator Ginesi - Zimbabve, Gine - Eritre, Kamerun - Namibya, Benin - O. Afrika)</i>
+• <i>Eleme Sebebi:</i> Ağır zemin şartları, aşırı düşük xG üretimi ve KG Yok oranlarının 1.15 - 1.30 bandına sıkıştığı yapısal kısırlık nedeniyle bültendeki tüm Afrika maçları KGA koruma filtresiyle elenmiştir.
+
+🚫 <b>Ontinyent CF - CD Utiel (22:00):</b>
+• <i>Eleme Sebebi:</i> İspanya alt ligi yapısal savunma ekolü (2.5 Alt: 1.44). Skorun 1-0 veya 1-1'de dondurulma riski çok yüksek.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💎 <b>ÖZEL FIRSAT VE PATLAMA RADARI (VALUE BET)</b>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔥 <b>Barcelona (K) - Arsenal (K) (20:45)</b>
+• <b>Özel Tercih:</b> 3.5 Üst
+• <b>Oran:</b> 1.55
+• <b>Değer Teşhisi:</b> Barcelona kadın takımının iç saha xG üretim baremi maç başına 3.40 seviyesindedir. Arsenal'in hücum kalitesiyle birleştiğinde maçın 2.5 baremini rahatlıkla aşıp 4+ gol patlaması üretmesi kuvvetle muhtemeldir.
+
+🔥 <b>Türkiye - Belçika (20:00)</b>
+• <b>Özel Tercih:</b> KG Var (1.35) & 2.5 Üst (1.37)
+• <b>Değer Teşhisi:</b> İki takımın da geçiş hücumlarındaki kalitesine karşın savunma tandemlerinin baskı altında yaptığı bireysel hatalar maçı tempolu bir gol şölenine açık hale getirmektedir.
 
 ━━━━━━━━━━━━━━━━━━━━
 💰 <b>KGA 100X OTONOM KASA & BİLEŞİK BÜYÜME RAPORU</b>
