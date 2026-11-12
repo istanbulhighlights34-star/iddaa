@@ -54,9 +54,9 @@ def run_daily_scheduler():
             today_str = tr_time.strftime("%d.%m.%Y")
             curr_hm = tr_time.strftime("%H:%M")
 
-            # 1. Sabah 09:00 Bülteni
-            if curr_hm == "09:00" and last_morning_sent != today_str:
-                print(f"[*] [SCHEDULER] Sabah 09:00 bülteni otomatik tetikleniyor ({today_str})...")
+            # 1. Sabah 09:22 Bülteni (Saat başı yoğunluğunu aşmak için)
+            if curr_hm == "09:22" and last_morning_sent != today_str:
+                print(f"[*] [SCHEDULER] Sabah 09:22 bülteni otomatik tetikleniyor ({today_str})...")
                 try:
                     import run_kga_cloud
                     run_kga_cloud.main()

@@ -1,23 +1,23 @@
 [
   {
-    "home": "DEMOKRATİK KONGO CUMHU.",
-    "away": "1 SİERRA LEONE",
+    "home": "SENEGAL",
+    "away": "1 SUDAN",
     "tag": "🏰 Ana Kale (MBS 3)",
-    "target": "3.5 Alt (1,21)",
-    "saat": "19:00C"
-  },
-  {
-    "home": "GİNE",
-    "away": "1 ERİTRE",
-    "tag": "🏰 Ana Kale (MBS 3)",
-    "target": "3.5 Alt (1,24)",
-    "saat": "19:00C"
-  },
-  {
-    "home": "FİLDİŞİ SAHİLİ",
-    "away": "1 GAMBİYA",
-    "tag": "🏰 Ana Kale (MBS 3)",
-    "target": "3.5 Alt (1,26)",
+    "target": "3.5 Alt (1,41)",
     "saat": "22:00C"
+  },
+  {
+    "home": "İNGİLTERE U20",
+    "away": "ÇEKYA U20",
+    "tag": "🏰 Ana Kale (MBS 2)",
+    "target": "3.5 Alt ()",
+    "saat": "22:30C"
+  },
+  {
+    "home": "ARNAVUTLUK",
+    "away": "1 FİNLANDİYA",
+    "tag": "🏰 Ana Kale (MBS 1)",
+    "target": "3.5 Alt (1,10)",
+    "saat": "22:45C"
   }
 ]

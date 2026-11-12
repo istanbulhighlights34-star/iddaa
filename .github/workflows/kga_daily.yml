@@ -2,8 +2,8 @@ name: KGA 3.0 Bulut Otomasyonu (Sabah Bülteni & Gün Sonu Raporu)
 
 on:
   schedule:
-    # 1. Sabah 09:00 TSİ (06:00 UTC) -> Günlük Bülten
-    - cron: '0 6 * * *'
+    # 1. Sabah 09:22 TSİ (06:22 UTC) -> Günlük Bülten (Saat başı yoğunluğuna takılmamak için 09:22)
+    - cron: '22 6 * * *'
     # 2. Gece 23:55 TSİ (20:55 UTC) -> Gün Sonu Kapanış ve Kasa Raporu
     - cron: '55 20 * * *'
 

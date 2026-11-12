@@ -89,7 +89,11 @@ def parse_kga_matches(pdf_path, target_day=None):
                     current_day = m.group(1)
                     break
 
-            if target_day_upper and current_day and current_day != target_day_upper:
+            # İlk sayfada gün başlığı eksikse (kapak sayfası), bülten başlangıç gününü varsay (Salı veya Cuma)
+            if page_idx == 0 and not current_day:
+                current_day = 'SALI' if '10 KASIM' in text.upper() or 'SALI' in text.upper() else 'CUMA'
+
+            if target_day_upper and current_day != target_day_upper:
                 continue
 
             words = sorted(page.extract_words(), key=lambda w: (w['top'], w['x0']))
@@ -165,40 +169,39 @@ def ai_filter_and_generate_report(candidate_matches, blacklisted_candidates, bla
         from google import genai
         client = genai.Client(api_key=GEMINI_API_KEY)
         
-        prompt = f"""Sen Kinetik Gol Algoritması 2.0 (KGA) Yapay Zeka Uzmanısın.
-Bugünün resmi İddaa bülteninden matematiksel İkiz Oran Kilidini (2.5 Üst 1.70-1.95 & KG Var 1.40-1.62) geçen aday maçları taktiksel xG, dinamik kara liste ve tempo süzgecinden geçirerek nihai analiz raporunu hazırla.
+        prompt = f"""Sen Kinetik Gol Algoritması 3.0 (KGA) Yapay Zeka Uzmanısın.
+Bugünün resmi İddaa bülteninden çıkarılan aday maçları KGA 3.0 kurallarına göre analiz edip Telegram raporu hazırla.
 
-🚨 KESİN TARİH VE GÜN KURALI (EN KRİTİK KURAL):
-BUGÜNÜN TARİHİ: {date_str} {gun_str}.
-YALNIZCA VE YALNIZCA BUGÜN ({gun_str}) OYNANACAK CANLI/GELECEK MAÇLARI SEÇEBİLİRSİN.
-CUMA VEYA CUMARTESİ GÜNÜ OYNANIP BİTMİŞ HİÇBİR MAÇ (Örn: Farul Constanta, Lucena, Cercle Brugge vb.) BÜLTENDE KESİNLİKLE YER ALAMAZ!
-Aşağıda verilen aday maçlar tamamen bugün ({gun_str} günü) oynanacak maçlardır. Seçimlerini yalnızca bu listeden yap!
+🚨 KESİN TARİH, SAAT VE KRONOLOJİK SIRALAMA KURALLARI:
+1. BUGÜNÜN TARİHİ: {date_str} {gun_str}.
+2. Aşağıda verilen maçlar YALNIZCA BUGÜN ({gun_str}) ve ŞU ANKİ SAATTEN SONRA oynanacak maçlardır. Geçmiş veya ertesi günün maçları KESİNLİKLE eklenemez!
+3. Kuponlardaki ve listedeki maçları BAŞLAMA SAATİNE GÖRE KRONOLOJİK SIRAYA DİZ (Erken saatten geç saate doğru: Örn 19:00 -> 20:45 -> 22:00). Asla sabah 08:00'lik veya ertesi günkü bir maçı başa koyup kafa karıştırma!
+4. İDDAA MBS KURALI: Tek maç önerilecekse maçın 'mbs' değeri KESİNLİKLE 1 olmalıdır! MBS 3 olan bir maçı asla tek maç yazma, MBS 3 olanları en az 3 maçlık kombinde kullan.
 
-KGA 2.0 KURALLARI VE YÖNERGELER (KGA_MANIFESTO.md):
-1. ⭐ GÜNÜN ALTIN TEK MAÇI (TIER 1):
-   - Adaylar arasından hücum geçişi en tempolu, lig dinamizmi en yüksek, 1-1 kesinliği en net olan SADECE 1 MAÇ seçilecek (Hedef Oran: 1.75 - 2.10 bandı).
-   - 🛡️ KALİBRASYON KURALI: Romanya veya İspanya alt ligleri gibi 1-1'den sonra maçı soğutan ligler Altın Maçta DÜZ 2.5 ÜST olarak seçilmez. Düz 2.5 Üst YALNIZCA 1-1'den sonra durmayan saf hücum liglerinden (Almanya 1-2, Hollanda 1-2, İsviçre vb.) seçilebilir. Diğer liglerde tercih KG Var veya KG Var & 2.5 Üst hibriti olarak kilitlenir.
-   - Canlı kadro, xG ve taktiksel teşhisini maddelerle açıkla.
-2. 📈 KADEMELİ KASA KATLAMA (ROLLING BET - ÇAKIŞMASIZ ZİNCİR):
-   - Gün içinde saatleri KESİNLİKLE ÇAKIŞMAYAN 2 ila 3 basamaklı seri oluştur.
-   - 🛡️ KASA KORUMASI: 1. basamakta kasanın riske girmemesi için KG Var (1.40 - 1.62) veya Tier 1 süper tempo 2.5 Üst seç. Skor koruyan liglerde çıplak 2.5 Üst riskine girme.
-   - Temiz maç yoksa zorlama basamak açma, 2 basamakta bırak.
-3. 🎲 SİSTEM 2-3 SKOR KUPONU:
-   - KGA 1-1 barajını aşarak 2-1, 1-2, 3-1 veya 2-2 skoruna evrilecek 3 maç ve hedef skorlarını yaz.
-4. ⛔ DİNAMİK KARA LİSTE ELEMELERİ (CANLI KONTROLLERLE ELENENLER):
-   - Aşağıda verilen elenmiş maçları ve dinamik kontrolleri kullanarak; mevsimsel kış karartmasına uğrayan ligleri (Polonya Ekstraklasa vb.), düşük oranlı/kısır Serie B ekolünü ve Burnley tipi aşırı pragmatik kapanan takımları gerekçeleriyle listele.
-5. 💎 ÖZEL FIRSAT VE PATLAMA RADARI (EKSTRA DEĞER & VALUE BET MODÜLÜ):
-   - Ana omurgamız 2.5 Üst ve KG Var olmakla birlikte; bültende geçmiş oran kalıplarına ve istatistiklere dayanarak çok belirgin bir "Net Maç Sonucu (MS 1/2)", "4+ Gol / 3.5 Üst Patlaması" veya "İddaa Oran Sapması" fark ettiğin istisnai maçlar varsa bunları bu özel başlık altında gerekçesiyle paylaş.
-   - Temiz bir fırsat yoksa zorlama yapma.
+KGA 3.0 KUPON MİMARİSİ (KGA_MANIFESTO.md):
+1. 🏰 1. KUPON: "ANA KALE" (3.5 ALT GÜVENCE KOMBİNİ - Kasanın %50'si / 500 TL):
+   - 4 gol çıkma ihtimali en düşük, defansif dengeli 3 maç seç (Hedef: 3.5 Alt oranları 1.20 - 1.35 arası, toplam oran ~1.85 - 2.15).
+   - 🇳🇱 KRİTİK KURAL: HOLLANDA ligleri (Eredivisie / Eerste Divisie) ve Almanya Bundesliga maçları ASLA 3.5 Alt kuponuna alınmaz!
+   - İddaa MBS 3 kuralına %100 uyumlu 3 maç bağla. Temiz 3 maç yoksa ZORLAMA YAPMA, "PAS GEÇİLDİ / KASA KORUNDU" yaz!
+
+2. ⚡ 2. KUPON: 360° BÜYÜK MAÇ & HANDİKAP RADARI (Kasanın %30'u / 300 TL):
+   - Süper Lig veya Avrupa büyük maçlarında net favorilerin Handikaplı Maç Sonucu (HMS 1 / HMS 2) veya Net MS fırsatları (1.70 - 2.30 oran bandı).
+   - Tek maç olarak verilecekse sadece MBS 1 seç! Temiz fırsat yoksa "PAS GEÇİLDİ" yaz.
+
+3. 💎 3. KUPON: HOLLANDA & DEĞER FIRSATI (Kasanın %20'si / 200 TL):
+   - Bültende Hollanda (Eredivisie/Eerste Divisie) veya yüksek tempolu hücum maçları varsa KG Var / 2.5 Üst olarak değerlendir.
+
+4. 🛡️ ALTIN KURAL (PAS GEÇME DİSİPLİNİ):
+   - Maç olacak diye illaki zorlama maç bulmaya çalışma! Kriterlere uyan temiz maç yoksa o kuponu açıkça PAS GEÇ.
 
 GÜNCEL CANLI LİG & KARA LİSTE DENETİM TABLOSU:
 {blacklist_summary}
 
 SİSTEM TARAFINDAN ÖN-DENETİMLE KARA LİSTEYE ALINIP ELENEN MAÇLAR:
-{json.dumps(blacklisted_candidates, ensure_ascii=False, indent=2)}
+{json.dumps(blacklisted_candidates[:15], ensure_ascii=False, indent=2)}
 
-BUGÜNÜN MATEMATİKSEL İKİZ KİLİDİ GEÇEN GÜVENLİ ADAY MAÇLARI:
-{json.dumps(candidate_matches, ensure_ascii=False, indent=2)}
+BUGÜNÜN SAAT SIRALI GÜVENLİ ADAY MAÇLARI ({gun_str} - {date_str}):
+{json.dumps(candidate_matches[:60], ensure_ascii=False, indent=2)}
 
 FORMAT KURALLARI:
 - Yalnızca Telegram HTML etiketleri kullan (<b>, <i>, <code>, <u>). Asla Markdown (#, **, *) veya <div>/<p> kullanma.
@@ -252,6 +255,10 @@ def save_todays_active_matches(base_dir, all_matches):
 def build_deterministic_kga_report(all_matches, blacklisted_candidates, tarih_str, gun_str):
     alt35_candidates = []
     for m in all_matches:
+        lig_u = m.get('lig', '').upper()
+        # Hollanda ve Almanya ligleri ASLA 3.5 Alt kuponuna alınmaz!
+        if any(x in lig_u for x in ['HOL', 'ALM', 'BUN', 'NED']):
+            continue
         a35_str = m.get('alt35', '').replace(',', '.')
         if a35_str:
             try:
@@ -263,6 +270,8 @@ def build_deterministic_kga_report(all_matches, blacklisted_candidates, tarih_st
 
     alt35_candidates.sort(key=lambda x: x[0])
     k1_matches = [m for _, m in alt35_candidates[:3]]
+    # Kronolojik saat sırasına göre diz
+    k1_matches.sort(key=lambda x: re.sub(r'[^0-9:]', '', x.get('saat', '99:99')))
     has_k1 = len(k1_matches) >= 3
 
     k1_odds = 1.0
@@ -313,7 +322,7 @@ def build_deterministic_kga_report(all_matches, blacklisted_candidates, tarih_st
         lines.append(f'🎯 <b>Toplam Kupon Oranı:</b> <b>{k1_odds:.2f}</b>')
         lines.append('💰 <b>Yatırım Payı (%50):</b> <b>500 TL</b> (Kasanın Sarsılmaz Taşıyıcısı)')
     else:
-        lines.append('🛡️ <i>Bugün İddaa bülten geçiş günüdür (Hafta sonu bülteni tamamlandı, yeni bülten bekleniyor). Güvenlik kriterlerimize uyan temiz maç bulunamadı. Zorlama kupon yapılmadı, bu kupon <b>PAS GEÇİLDİ / KASA KORUNDU</b>.</i>')
+        lines.append(f'🛡️ <i>Bugün ({tarih_str} {gun_str}) bültende 3.5 Alt güvenlik kriterlerimize tam uyan temiz 3 maç bulunamadı. Zorlama kupon yapılmadı, bu kupon <b>PAS GEÇİLDİ / KASA KORUNDU</b>.</i>')
     lines.append('')
     lines.append('━━━━━━━━━━━━━━━━━━━━')
     lines.append('')
@@ -333,9 +342,12 @@ def build_deterministic_kga_report(all_matches, blacklisted_candidates, tarih_st
     lines.append('━━━━━━━━━━━━━━━━━━━━')
     lines.append('')
     lines.append('💎 <b>3. KUPON: SÜRPRİZ DEĞER & FIRSAT AVCISI</b>')
-    lines.append(f"🏟️ <b>Maç:</b> {value_pick.get('home', '')} - {value_pick.get('away', '')} ({value_pick.get('lig', '')})")
-    lines.append(f"🎯 <b>Öneri:</b> KG Var (<b>{value_pick.get('kgvar', '1.60')}</b>) veya 2.5 Üst (<b>{value_pick.get('ust25', '1.75')}</b>)")
-    lines.append('💰 <b>Yatırım Payı (%20):</b> <b>200 TL</b> (Ekstra Getiri)')
+    if value_pick and value_pick.get('home'):
+        lines.append(f"🏟️ <b>Maç:</b> {value_pick.get('home', '')} - {value_pick.get('away', '')} ({value_pick.get('lig', '')} - {value_pick.get('saat', '')})")
+        lines.append(f"🎯 <b>Öneri:</b> KG Var (<b>{value_pick.get('kgvar', '1.60')}</b>) veya 2.5 Üst (<b>{value_pick.get('ust25', '1.75')}</b>)")
+        lines.append('💰 <b>Yatırım Payı (%20):</b> <b>200 TL</b> (Ekstra Getiri)')
+    else:
+        lines.append('🛡️ <i>Bugün için ekstra değer/patlama fırsatı sunan temiz maç bulunamadı. Zorlama yapılmadı, <b>PAS GEÇİLDİ</b>.</i>')
     lines.append('')
     lines.append('━━━━━━━━━━━━━━━━━━━━')
     lines.append("🛡️ <b>MBS & İDDAA GÜVENCESİ:</b> Bültendeki maçların MBS şartları tam olarak gözetilmiştir. Tek maça kasanın %50'sini basma riski kaldırılmıştır.")
@@ -391,26 +403,27 @@ def main():
     historical_macro_report = evaluator.generate_macro_historical_summary()
     print(f"[*] Kümülatif Arşiv Güncellendi: {macro_info['total_bulletins']} bülten, {macro_info['total_archived_matches']} toplam maç.")
         
-    # YALNIZCA BUGÜNÜN (Örn: Pazar) MAÇLARINI SÜZ
+    # YALNIZCA BUGÜNÜN (Örn: Perşembe) MAÇLARINI SÜZ
     candidate_matches = parse_kga_matches(pdf_path, target_day=gun_str)
     
-    # Şu anki saatten sonra başlayacak canlı/gelecek maçları filtrele
+    # Şu anki saatten sonra başlayacak (ve gece yarısı 00:00-06:00 ertesi gün sarkması olmayan) maçları süz
     curr_time_str = tr_time.strftime("%H:%M")
     upcoming_matches = []
     for m in candidate_matches:
         saat_clean = re.sub(r'[^0-9:]', '', m.get("saat", ""))
-        # Eğer saat belirtilmişse ve şu anki saatten sonraysa veya henüz başlamadıysa
-        if not saat_clean or saat_clean >= curr_time_str:
+        if not saat_clean or len(saat_clean) != 5:
+            continue
+        # Gece 00:00 - 06:00 arası maçlar takvim olarak ertesi sabaha sarkar, bugünkü seansa karıştırma!
+        if saat_clean < "06:00":
+            continue
+        if saat_clean >= curr_time_str:
             upcoming_matches.append(m)
-        else:
-            # Maç bugün oynandı ama saat olarak geride kaldı
-            pass
             
-    # Eğer henüz başlamamış yeterli maç varsa onları önceliklendir
-    if len(upcoming_matches) >= 3:
-        candidate_matches = upcoming_matches
+    # Saat sırasına göre (en erken saatten en geç saate) kronolojik sırala!
+    upcoming_matches.sort(key=lambda x: re.sub(r'[^0-9:]', '', x.get("saat", "99:99")))
+    candidate_matches = upcoming_matches
         
-    print(f"[*] BUGÜN ({gun_str} - {tarih_str}) İkiz Kilit Aday Maç Sayısı: {len(candidate_matches)}")
+    print(f"[*] BUGÜN ({gun_str} - {tarih_str}) Saat Sıralı Güncel Aday Maç Sayısı: {len(candidate_matches)}")
     
     # Güvenlik ve Dinamik Kara Liste Ayrıştırması
     safe_candidates = []
