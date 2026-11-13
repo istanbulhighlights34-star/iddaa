@@ -1,23 +1,23 @@
 [
   {
-    "home": "SENEGAL",
-    "away": "1 SUDAN",
-    "tag": "🏰 Ana Kale (MBS 3)",
-    "target": "3.5 Alt (1,41)",
-    "saat": "22:00C"
-  },
-  {
-    "home": "İNGİLTERE U20",
-    "away": "ÇEKYA U20",
+    "home": "NORVEÇ U21",
+    "away": "POLONYA U21",
     "tag": "🏰 Ana Kale (MBS 2)",
-    "target": "3.5 Alt ()",
-    "saat": "22:30C"
+    "target": "3.5 Alt (1,27)",
+    "saat": "19:30C"
   },
   {
-    "home": "ARNAVUTLUK",
-    "away": "1 FİNLANDİYA",
-    "tag": "🏰 Ana Kale (MBS 1)",
-    "target": "3.5 Alt (1,10)",
-    "saat": "22:45C"
+    "home": "DANİMARKA U21",
+    "away": "HOLLANDA U21",
+    "tag": "🏰 Ana Kale (MBS 2)",
+    "target": "3.5 Alt (1,24)",
+    "saat": "20:30C"
+  },
+  {
+    "home": "HELLERUP",
+    "away": "B93 KOPENHAG",
+    "tag": "🏰 Ana Kale (MBS 3)",
+    "target": "3.5 Alt (1,34)",
+    "saat": "21:00"
   }
 ]
