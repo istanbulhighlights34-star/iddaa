@@ -7,7 +7,12 @@ on:
     # 2. Gece 23:55 TSİ (20:55 UTC) -> Gün Sonu Kapanış ve Kasa Raporu
     - cron: '55 20 * * *'
 
-  workflow_dispatch: # Manuel anlık tetikleme
+  workflow_dispatch:
+    inputs:
+      target_task:
+        description: 'Çalıştırılacak Görev (sabah / gece / auto)'
+        required: false
+        default: 'auto'
 
 jobs:
   kga_orchestrator:
@@ -35,9 +40,9 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID || '664321983' }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          # UTC saatine göre sabah mı gece mi olduğunu anla
+          TASK="${{ github.event.inputs.target_task || 'auto' }}"
           CURRENT_HOUR=$(date -u +"%H")
-          if [ "$CURRENT_HOUR" -ge 18 ] || [ "$CURRENT_HOUR" -le 2 ]; then
+          if [ "$TASK" = "gece" ] || { [ "$TASK" = "auto" ] && { [ "$CURRENT_HOUR" -ge 18 ] || [ "$CURRENT_HOUR" -le 2 ]; }; }; then
             echo "[*] Gece Kapanış Seansı: Gün Sonu Raporu çalıştırılıyor..."
             python run_kga_eod_report.py
           else

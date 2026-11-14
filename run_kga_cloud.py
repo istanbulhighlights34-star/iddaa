@@ -69,6 +69,19 @@ def ensure_bulletin_pdf(filename, url, archive_dir):
             return os.path.join(archive_dir, latest)
         return None
 
+def normalize_day(s):
+    if not s:
+        return ''
+    tr_map = str.maketrans({
+        'i': 'I', 'İ': 'I', 'ı': 'I', 'I': 'I',
+        'ş': 'S', 'Ş': 'S',
+        'ğ': 'G', 'Ğ': 'G',
+        'ü': 'U', 'Ü': 'U',
+        'ö': 'O', 'Ö': 'O',
+        'ç': 'C', 'Ç': 'C'
+    })
+    return s.translate(tr_map).upper()
+
 def parse_kga_matches(pdf_path, target_day=None):
     """
     KGA 3.0 Çok Yönlü 360° Bülten Ayrıştırıcısı:
@@ -77,23 +90,25 @@ def parse_kga_matches(pdf_path, target_day=None):
     - 3.5 Alt, 2.5 Alt/Üst, Handikaplı MS (HMS 1/X/2), Net MS ve KG Var oranlarını çeker.
     """
     all_matches = []
-    target_day_upper = target_day.strip().upper() if target_day else None
+    target_day_norm = normalize_day(target_day) if target_day else None
 
     with pdfplumber.open(pdf_path) as pdf:
         current_day = ''
         for page_idx, page in enumerate(pdf.pages):
             text = page.extract_text() or ''
             for line in text.splitlines()[:5]:
-                m = re.search(r'(CUMARTESİ|PAZARTESİ|ÇARŞAMBA|PERŞEMBE|CUMA|PAZAR|SALI)', line.upper())
+                line_norm = normalize_day(line)
+                m = re.search(r'(CUMARTESI|PAZARTESI|CARSAMBA|PERSEMBE|CUMA|PAZAR|SALI)', line_norm)
                 if m:
                     current_day = m.group(1)
                     break
 
             # İlk sayfada gün başlığı eksikse (kapak sayfası), bülten başlangıç gününü varsay (Salı veya Cuma)
             if page_idx == 0 and not current_day:
-                current_day = 'SALI' if '10 KASIM' in text.upper() or 'SALI' in text.upper() else 'CUMA'
+                line_norm = normalize_day(text)
+                current_day = 'SALI' if '10 KASIM' in line_norm or 'SALI' in line_norm else 'CUMA'
 
-            if target_day_upper and current_day != target_day_upper:
+            if target_day_norm and normalize_day(current_day) != target_day_norm:
                 continue
 
             words = sorted(page.extract_words(), key=lambda w: (w['top'], w['x0']))
@@ -137,7 +152,7 @@ def parse_kga_matches(pdf_path, target_day=None):
                 kgyok_w = [w['text'] for w in line if 545 < w['x0'] <= 565]
 
                 all_matches.append({
-                    'day': current_day or (target_day_upper or 'BUGÜN'),
+                    'day': current_day or (target_day or 'BUGÜN'),
                     'page': page_idx + 1,
                     'lig': ''.join(lig_w),
                     'saat': saat_w[0] if saat_w else '',

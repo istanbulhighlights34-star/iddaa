@@ -15,14 +15,45 @@ import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import urllib.request
 import urllib.parse
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 class HealthCheckHandler(BaseHTTPRequestHandler):
     def do_GET(self):
+        parsed = urllib.parse.urlparse(self.path)
+        path = parsed.path
+        if path == "/trigger/morning":
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(b"OK: Morning 09:22 bulletin triggered.")
+            threading.Thread(target=self._run_morning, daemon=True).start()
+            return
+        elif path == "/trigger/night":
+            self.send_response(200)
+            self.send_header("Content-type", "text/plain; charset=utf-8")
+            self.end_headers()
+            self.wfile.write(b"OK: Night 23:55 EOD report triggered.")
+            threading.Thread(target=self._run_night, daemon=True).start()
+            return
+
         self.send_response(200)
         self.send_header("Content-type", "text/plain; charset=utf-8")
         self.end_headers()
         self.wfile.write(b"KGA 2.0 Telegram Bot is LIVE and running 24/7!")
+
+    def _run_morning(self):
+        try:
+            import run_kga_cloud
+            run_kga_cloud.main()
+        except Exception as e:
+            print(f"[!] Trigger morning error: {e}")
+
+    def _run_night(self):
+        try:
+            import run_kga_eod_report
+            run_kga_eod_report.main()
+        except Exception as e:
+            print(f"[!] Trigger night error: {e}")
 
     def log_message(self, format, *args):
         pass
@@ -54,23 +85,23 @@ def run_daily_scheduler():
             today_str = tr_time.strftime("%d.%m.%Y")
             curr_hm = tr_time.strftime("%H:%M")
 
-            # 1. Sabah 09:22 Bülteni (Saat başı yoğunluğunu aşmak için)
-            if curr_hm == "09:22" and last_morning_sent != today_str:
-                print(f"[*] [SCHEDULER] Sabah 09:22 bülteni otomatik tetikleniyor ({today_str})...")
+            # 1. Sabah 09:22 Bülteni (09:22 - 11:00 penceresinde henüz gönderilmediyse tetikle)
+            if "09:22" <= curr_hm <= "11:00" and last_morning_sent != today_str:
+                print(f"[*] [SCHEDULER] Sabah 09:22 bülteni otomatik tetikleniyor ({today_str} - Saat: {curr_hm})...")
+                last_morning_sent = today_str
                 try:
                     import run_kga_cloud
                     run_kga_cloud.main()
-                    last_morning_sent = today_str
                 except Exception as e:
                     print(f"[!] Sabah bülteni tetikleme hatası: {e}")
 
-            # 2. Gece 23:55 Gün Sonu Raporu
-            if curr_hm == "23:55" and last_night_sent != today_str:
-                print(f"[*] [SCHEDULER] Gece 23:55 Gün Sonu Raporu otomatik tetikleniyor ({today_str})...")
+            # 2. Gece 23:55 Gün Sonu Raporu (23:55 - 23:59 penceresinde henüz gönderilmediyse tetikle)
+            if "23:55" <= curr_hm <= "23:59" and last_night_sent != today_str:
+                print(f"[*] [SCHEDULER] Gece 23:55 Gün Sonu Raporu otomatik tetikleniyor ({today_str} - Saat: {curr_hm})...")
+                last_night_sent = today_str
                 try:
                     import run_kga_eod_report
                     run_kga_eod_report.main()
-                    last_night_sent = today_str
                 except Exception as e:
                     print(f"[!] Gece raporu tetikleme hatası: {e}")
         except Exception as err:
