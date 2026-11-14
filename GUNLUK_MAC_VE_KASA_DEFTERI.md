@@ -71,3 +71,21 @@
 • **Kümülatif Net Kâr/Zarar:** **+0.00 TL**
 ━━━━━━━━━━━━━━━━━━━━
 💡 *KGA 3.0 ile 3.5 Alt Ana Kale disiplini devreye alınmış ve sermaye koruma zırhı güçlendirilmiştir.*
+
+## [KAPANIS RAPORU] 14.11.2026 04:07 TSİ
+
+📋 **KGA 3.0 GÜN SONU KEPENK KAPANIŞ & KASA RAPORU**
+📅 **Rapor Zamanı:** 14.11.2026 04:07
+━━━━━━━━━━━━━━━━━━━━
+⚽ **TÜM OYNANAN MAÇLAR & SONUÇLAR (AŞAĞIDAN YUKARIYA):**
+
+
+━━━━━━━━━━━━━━━━━━━━
+💰 **GENEL KASA VE PERFORMANS TABLOSU:**
+• **Toplam İncelenen Maç:** 0
+• **Başarılı (✅):** 0 | **Başarısız (❌):** 0 | **Ertelenen (⏸️):** 0
+• **Toplam Yatırılan:** 0.00 TL
+• **Toplam Geri Dönen:** 0.00 TL
+• **Kümülatif Net Kâr/Zarar:** **+0.00 TL**
+━━━━━━━━━━━━━━━━━━━━
+💡 *KGA 3.0 ile 3.5 Alt Ana Kale disiplini devreye alınmış ve sermaye koruma zırhı güçlendirilmiştir.*
