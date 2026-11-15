@@ -1,24 +1,58 @@
-⚽ <b>KİNETİK GOL ALGORİTMASI 3.0 (KGA) - 360° ÇOK YÖNLÜ BÜLTEN RAPORU</b>
-📅 <b>Tarih:</b> 14.11.2026 Cumartesi
-⚡ <b>Model:</b> KGA 3.0 (3.5 Alt Ana Kale & 360° Handikap Radarı)
+🤖 <b>KİNETİK GOL ALGORİTMASI 3.0 (KGA) BÜLTEN RAPORU</b>
+📅 <b>Tarih:</b> 15.11.2026 Pazar
+🕒 <b>Bülten Analiz Zamanı:</b> 18:00 Sonrası Maçlar
+━━━━━━━━━━━━━━━━━━━━
+
+🛡️ <b>KGA FİLTRE VE KARA LİSTE DENETİMİ</b>
+⛔ <i>Getafe B (Katı Blok / Kısır Kurgu) ve Juventus U23 (Pragmatik 1-0 Kurgusu) algoritmik güvenlik bariyerine takılarak bültenden tamamen elenmiştir.</i>
+
 ━━━━━━━━━━━━━━━━━━━━
 
 🏰 <b>1. KUPON: "ANA KALE" (3.5 ALT GÜVENCE KOMBİNİ)</b>
-<i>Kural: 10 farklı skorda (0-0 dan 2-1 e) firesiz kazandırır. İddaa MBS 3 kuralına %100 uyumludur.</i>
-🛡️ <i>Bugün (14.11.2026 Cumartesi) bültende 3.5 Alt güvenlik kriterlerimize tam uyan temiz 3 maç bulunamadı. Zorlama kupon yapılmadı, bu kupon <b>PAS GEÇİLDİ / KASA KORUNDU</b>.</i>
+💰 <b>Kasa Tahsisi:</b> %50 (500 TL)
+🎯 <b>Strateji:</b> Katı savunma blokları, düşük xG ve İddaa MBS kuralına %100 tam uyum.
+
+1️⃣ <b>18:15</b> | İSPL2 | <b>Granada - Las Palmas</b>
+• <b>Tercih:</b> 3.5 ALT
+• <b>Oran:</b> 1.26 (MBS 1)
+• <i>Analiz:</i> İspanya 2. Ligi dinamiklerinde kontrollü oyun yapısı ve düşük gol beklentisi.
+
+2️⃣ <b>18:30</b> | POR2 | <b>Penafiel - Lusitania</b>
+• <b>Tercih:</b> 3.5 ALT
+• <b>Oran:</b> 1.20 (MBS 3)
+• <i>Analiz:</i> Portekiz 2. Ligi'nin orta saha kilitlenmesine yatkın dengeli ritmi; 4 gol bareminin oldukça uzağında.
+
+3️⃣ <b>21:00</b> | POR2 | <b>Leixoes - Chaves</b>
+• <b>Tercih:</b> 3.5 ALT
+• <b>Oran:</b> 1.24 (MBS 3)
+• <i>Analiz:</i> İki takımın da pragmatik alan savunması ve skor koruma refleksleri ön planda.
+
+📊 <b>Toplam Oran:</b> 1.87
+🛡️ <b>MBS Uyumu:</b> 3 Maç (MBS 3 kuralı eksiksiz sağlandı)
 
 ━━━━━━━━━━━━━━━━━━━━
 
-⚡ <b>2. KUPON: 360° BÜYÜK MAÇ & HANDİKAP RADARI</b>
-🛡️ <i>Bugün büyük maçlarda net handikap avantajı veren maç bulunamadı. Zorlama yapılmadı, bu kupon <b>PAS GEÇİLDİ / KASA KORUNDU</b>.</i>
+⚡ <b>2. KUPON: 360° RADAR (BÜYÜK MAÇ & TEK MAÇ FIRSATI)</b>
+💰 <b>Kasa Tahsisi:</b> %30 (300 TL)
+🎯 <b>Strateji:</b> MBS 1 güvencesiyle net favori değerlendirmesi (1.70 - 2.30 bandı).
+
+1️⃣ <b>20:00</b> | ULUS | <b>Belarus - Arnavutluk</b>
+• <b>Tercih:</b> Maç Sonu 2 (Arnavutluk Kazanır)
+• <b>Oran:</b> 1.81 (MBS 1 - TEK MAÇ)
+• <i>Analiz:</i> UEFA Uluslar Ligi mücadelesinde Arnavutluk'un geçiş savunmasındaki direnci ve Belarus'un sınırlı hücum opsiyonları karşısında deplasman galibiyeti ideal değer üretmektedir.
+
+📊 <b>Toplam Oran:</b> 1.81
 
 ━━━━━━━━━━━━━━━━━━━━
 
-💎 <b>3. KUPON: SÜRPRİZ DEĞER & FIRSAT AVCISI</b>
-🛡️ <i>Bugün için ekstra değer/patlama fırsatı sunan temiz maç bulunamadı. Zorlama yapılmadı, <b>PAS GEÇİLDİ</b>.</i>
+💎 <b>3. KUPON: HOLLANDA & TEMPO DEĞER RADARI</b>
+💰 <b>Kasa Tahsisi:</b> %20 (200 TL)
+
+⚠️ <b>DURUM: PAS GEÇİLDİ / KASA KORUNDU</b>
+• <i>Gerekçe:</i> Bültende KGA Tier 1 onaylı Hollanda ligleri (Eredivisie / Eerste Divisie) maçı bulunmamaktadır. KGA 3.0 Altın Disiplin Kuralı uyarınca yetersiz veri ve düşük tempolu alt liglerde zorlama hücum/üst bahsi alınmamış, kasa korunmuştur.
 
 ━━━━━━━━━━━━━━━━━━━━
-🛡️ <b>MBS & İDDAA GÜVENCESİ:</b> Bültendeki maçların MBS şartları tam olarak gözetilmiştir. Tek maça kasanın %50'sini basma riski kaldırılmıştır.
+📌 <i>KGA 3.0 Disiplin Notu: Başarı, bültendeki her maça oynamakta değil; algoritmanın kriterlerine tam oturan fırsatları seçip kasayı korumaktadır.</i>
 
 ━━━━━━━━━━━━━━━━━━━━
 💰 <b>KGA 100X OTONOM KASA & BİLEŞİK BÜYÜME RAPORU</b>
