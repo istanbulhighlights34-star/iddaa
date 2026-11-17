@@ -1,1 +1,23 @@
-[]
+[
+  {
+    "home": "MALAVİ",
+    "away": "MISIR",
+    "tag": "🏰 Ana Kale (MBS 3)",
+    "target": "3.5 Alt (1,23)",
+    "saat": "16:00C"
+  },
+  {
+    "home": "BELİZE",
+    "away": "1 SİNT MAARTEN",
+    "tag": "🏰 Ana Kale (MBS 3)",
+    "target": "3.5 Alt (1,32)",
+    "saat": "22:00"
+  },
+  {
+    "home": "BOSNA HERSEK",
+    "away": "1 ROMANYA",
+    "tag": "🏰 Ana Kale (MBS 1)",
+    "target": "3.5 Alt (1,21)",
+    "saat": "22:45C"
+  }
+]
