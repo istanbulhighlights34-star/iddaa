@@ -1,33 +1,61 @@
-⚽ <b>KİNETİK GOL ALGORİTMASI 3.0 (KGA) - 360° ÇOK YÖNLÜ BÜLTEN RAPORU</b>
-📅 <b>Tarih:</b> 20.11.2026 Cuma
-⚡ <b>Model:</b> KGA 3.0 (3.5 Alt Ana Kale & 360° Handikap Radarı)
+📊 <b>KİNETİK GOL ALGORİTMASI 3.0 (KGA) GÜNLÜK BÜLTEN RAPORU</b>
+📅 <b>Tarih:</b> 21.11.2026 Cumartesi
+🕒 <b>Bülten Analiz Saati:</b> 18:00 ve Sonrası Seansı
+🛡️ <b>Algoritma Sürümü:</b> KGA 3.0 AI Core
+
 ━━━━━━━━━━━━━━━━━━━━
 
 🏰 <b>1. KUPON: "ANA KALE" (3.5 ALT GÜVENCE KOMBİNİ)</b>
-<i>Kural: 10 farklı skorda (0-0 dan 2-1 e) firesiz kazandırır. İddaa MBS 3 kuralına %100 uyumludur.</i>
-• <b>1. Maç (MBS 3):</b> FLORİDSDORFER - 1 AUSTRİA WİEN II (AVU2 - 20:30C) ➔ <b>3.5 ALT (1,21)</b>
-• <b>2. Maç (MBS 3):</b> INVERNESS - 1 AYR UNİTED (İSKCH - 22:30C) ➔ <b>3.5 ALT (1,20)</b>
-• <b>3. Maç (MBS 3):</b> VİLLARREAL B - 1 GİMNASTİC (İSPP - 23:00) ➔ <b>3.5 ALT (1,20)</b>
-🎯 <b>Toplam Kupon Oranı:</b> <b>1.74</b>
-💰 <b>Yatırım Payı (%50):</b> <b>500 TL</b> (Kasanın Sarsılmaz Taşıyıcısı)
+💰 <b>Bütçe Dağılımı:</b> Kasanın %50'si (500 TL)
+🎯 <b>Strateji:</b> Düşük tempo, katı orta saha blokları ve xG kısırlığı analizi.
+
+▫️ <b>18:00</b> | İN1 | <b>Bradford - Doncaster</b>
+• <b>Tercih:</b> 3.5 Alt
+• <b>Oran:</b> 1.24 (MBS: 2)
+• <i>Analiz:</i> İki takımın da kontrollü geçiş oyunu ve düşük bitiricilik indeksi 4 gol ihtimalini minimize ediyor.
+
+▫️ <b>18:00</b> | İN1 | <b>Leyton Orient - Wimbledon</b>
+• <b>Tercih:</b> 3.5 Alt
+• <b>Oran:</b> 1.25 (MBS: 2)
+• <i>Analiz:</i> Kompakt savunma hatları ve 2.5 Alt eğilimli yapı (1.81), güvenli 3.5 Alt bandını destekliyor.
+
+▫️ <b>18:00</b> | İN2 | <b>Barnet - Port Vale</b>
+• <b>Tercih:</b> 3.5 Alt
+• <b>Oran:</b> 1.25 (MBS: 2)
+• <i>Analiz:</i> Karşılıklı pozisyon üretim kısırlığı ve sert ikili mücadele yoğunluğu skoru dar bantta tutacaktır.
+
+📈 <b>Toplam Oran:</b> <b>1.94</b>
+🔒 <b>MBS Uyumu:</b> %100 Uyumlu (3 Maç Kombini)
 
 ━━━━━━━━━━━━━━━━━━━━
 
 ⚡ <b>2. KUPON: 360° BÜYÜK MAÇ & HANDİKAP RADARI</b>
-🏟️ <b>Maç:</b> ATHLETİC BİLBAO - 1 ESPANYOL (İSPL1 - 23:00C) [MBS 1 - TEK MAÇ OYNANABİLİR]
-🎯 <b>Öneri:</b> Handikaplı Maç Sonucu <b>H1 (2.00)</b> (Net Galibiyet / En Az 2 Fark)
-🔍 <i>Teşhis:</i> Favori takımın kalite farkı ve tempolu hücum gücü ile handikap barajını aşması bekleniyor.
-💰 <b>Yatırım Payı (%30):</b> <b>300 TL</b> (Değerli Çarpan Hedefi)
+💰 <b>Bütçe Dağılımı:</b> Kasanın %30'u (300 TL)
+
+⛔ <b>DURUM: PAS GEÇİLDİ / KASA KORUNDU</b>
+🛡️ <i>Algoritmik Gerekçe:</i> Mevcut bültende MBS 1 kuralına ve KGA 3.0 Handikap / Net MS kriterlerine (1.70 - 2.30 bandında net favori elit takım) tam uyan yüksek güvenilirlikli bir büyük maç eşleşmesi bulunmamaktadır. KGA sermaye koruma disiplini gereği zorlama tercih yapılmamıştır.
 
 ━━━━━━━━━━━━━━━━━━━━
 
-💎 <b>3. KUPON: SÜRPRİZ DEĞER & FIRSAT AVCISI</b>
-🏟️ <b>Maç:</b> TRİGLAV - 1 NK DREN VRHNİKA (SLOVE2 - 19:00)
-🎯 <b>Öneri:</b> KG Var (<b>1,66</b>) veya 2.5 Üst (<b></b>)
-💰 <b>Yatırım Payı (%20):</b> <b>200 TL</b> (Ekstra Getiri)
+💎 <b>3. KUPON: TİER 1 TEMPO & DEĞER FIRSATI</b>
+💰 <b>Bütçe Dağılımı:</b> Kasanın %20'si (200 TL)
+🎯 <b>Strateji:</b> Tier 1 onaylı yüksek geçiş tempolu liglerde hücum verimliliği.
+
+▫️ <b>18:00</b> | BEL1 | <b>Charleroi - St. Truidense</b>
+• <b>Tercih:</b> 2.5 Üst
+• <b>Oran:</b> 1.42 (MBS: 1)
+• <i>Analiz:</i> Belçika Pro League'in açık alan dinamikleri ve zayıf ceza sahası savunmaları gollü bir 90 dakikayı işaret ediyor.
+
+▫️ <b>18:00</b> | İN1 | <b>Plymouth - Peterborough</b>
+• <b>Tercih:</b> 2.5 Üst
+• <b>Oran:</b> 1.27 (MBS: 2)
+• <i>Analiz:</i> Yüksek presli oyun anlayışı ve Peterborough'nun açık geçiş defektleri doğrudan gol baremini yukarı çekmektedir.
+
+📈 <b>Toplam Oran:</b> <b>1.80</b>
+🔒 <b>MBS Uyumu:</b> %100 Uyumlu (MBS 1 + MBS 2)
 
 ━━━━━━━━━━━━━━━━━━━━
-🛡️ <b>MBS & İDDAA GÜVENCESİ:</b> Bültendeki maçların MBS şartları tam olarak gözetilmiştir. Tek maça kasanın %50'sini basma riski kaldırılmıştır.
+⚠️ <i>KGA 3.0 Disiplin Notu: Bültendeki maç saatleri kronolojik olarak sıralanmış, MBS kuralları eksiksiz doğrulanmış ve riskli maçlar elenmiştir. Sabırlı kasa yönetimi esastır.</i>
 
 ━━━━━━━━━━━━━━━━━━━━
 💰 <b>KGA 100X OTONOM KASA & BİLEŞİK BÜYÜME RAPORU</b>
