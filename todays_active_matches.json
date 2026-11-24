@@ -1,23 +1,23 @@
 [
   {
-    "home": "KORTRİJK",
-    "away": "UNİON SAİNT GİLLOİSE",
-    "tag": "🏰 Ana Kale (MBS 1)",
-    "target": "3.5 Alt (1,34)",
-    "saat": "18:00C"
-  },
-  {
-    "home": "NYİREGYHAZAS",
-    "away": "DEBRECEN",
+    "home": "OMİYA ARDİJA",
+    "away": "1 T VORTİS",
     "tag": "🏰 Ana Kale (MBS 2)",
-    "target": "3.5 Alt (1,33)",
-    "saat": "18:00C"
+    "target": "3.5 Alt (1,24)",
+    "saat": "13:00C"
   },
   {
-    "home": "CARTAGENA",
-    "away": "1 REAL JAEN CF",
-    "tag": "🏰 Ana Kale (MBS 3)",
+    "home": "TOCHİGİ CİTY FC",
+    "away": "1 BLAUBLİTZ AKİTA",
+    "tag": "🏰 Ana Kale (MBS 2)",
+    "target": "3.5 Alt (1,24)",
+    "saat": "13:00C"
+  },
+  {
+    "home": "YOKOHAMA",
+    "away": "SENDAİ",
+    "tag": "🏰 Ana Kale (MBS 2)",
     "target": "3.5 Alt (1,22)",
-    "saat": "18:00"
+    "saat": "13:00C"
   }
 ]
