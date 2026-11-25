@@ -1,23 +1,23 @@
 [
   {
-    "home": "FC ORENBURG",
-    "away": "SPARTAK MOSKOVA",
+    "home": "LOKOMOTİV MOSKOVA",
+    "away": "1 FK ROSTOV",
     "tag": "🏰 Ana Kale (MBS 2)",
-    "target": "3.5 Alt (1,34)",
-    "saat": "17:00C"
+    "target": "3.5 Alt (1,23)",
+    "saat": "20:30C"
   },
   {
-    "home": "AL FATEH SC",
-    "away": "1 AL RİYADH",
+    "home": "AL FAİSALY FC",
+    "away": "AL DRAİH",
     "tag": "🏰 Ana Kale (MBS 2)",
-    "target": "3.5 Alt (1,26)",
-    "saat": "17:25C"
+    "target": "3.5 Alt (1,25)",
+    "saat": "20:30C"
   },
   {
-    "home": "ABHA CLUB",
-    "away": "AL SHABAB FC (KSA)",
-    "tag": "🏰 Ana Kale (MBS 2)",
+    "home": "JABLONEC",
+    "away": "LUGANO",
+    "tag": "🏰 Ana Kale (MBS 1)",
     "target": "3.5 Alt (1,31)",
-    "saat": "18:05C"
+    "saat": "20:45C"
   }
 ]
