@@ -1,23 +1,23 @@
 [
   {
-    "home": "LOKOMOTİV MOSKOVA",
-    "away": "1 FK ROSTOV",
-    "tag": "🏰 Ana Kale (MBS 2)",
-    "target": "3.5 Alt (1,23)",
-    "saat": "20:30C"
-  },
-  {
-    "home": "AL FAİSALY FC",
-    "away": "AL DRAİH",
-    "tag": "🏰 Ana Kale (MBS 2)",
-    "target": "3.5 Alt (1,25)",
-    "saat": "20:30C"
-  },
-  {
-    "home": "JABLONEC",
-    "away": "LUGANO",
+    "home": "HAJDUK SPLİT",
+    "away": "1 ST. TRUİDENSE",
     "tag": "🏰 Ana Kale (MBS 1)",
-    "target": "3.5 Alt (1,31)",
-    "saat": "20:45C"
+    "target": "3.5 Alt (1,27)",
+    "saat": "23:00C"
+  },
+  {
+    "home": "KAA GENT",
+    "away": "1 KIZIL YILDIZ",
+    "tag": "🏰 Ana Kale (MBS 1)",
+    "target": "3.5 Alt (1,26)",
+    "saat": "23:00C"
+  },
+  {
+    "home": "NORDSJÆLLAND",
+    "away": "PANATHİNAİKOS",
+    "tag": "🏰 Ana Kale (MBS 1)",
+    "target": "3.5 Alt (1,33)",
+    "saat": "23:00C"
   }
 ]
