@@ -1,23 +1,23 @@
 [
   {
-    "home": "PRESTON LİONS FC",
-    "away": "1 APİA LEİC",
-    "tag": "🏰 Ana Kale (MBS 2)",
-    "target": "3.5 Alt (1,27)",
-    "saat": "07:00C"
-  },
-  {
-    "home": "KYOTO SANGA",
-    "away": "1 CEREZO OSAKA",
-    "tag": "🏰 Ana Kale (MBS 1)",
-    "target": "3.5 Alt (1,30)",
-    "saat": "08:00C"
-  },
-  {
-    "home": "FC ANYANG",
-    "away": "1 JEJU UNİTED",
-    "tag": "🏰 Ana Kale (MBS 1)",
+    "home": "NK ISTRA 61",
+    "away": "1 VSN VARAZDİN",
+    "tag": "🏰 Ana Kale (MBS 3)",
     "target": "3.5 Alt (1,25)",
-    "saat": "08:00C"
+    "saat": "20:00C"
+  },
+  {
+    "home": "GKS TYCHY",
+    "away": "1 CHOJNİCZANKA",
+    "tag": "🏰 Ana Kale (MBS 3)",
+    "target": "3.5 Alt (1,29)",
+    "saat": "20:00"
+  },
+  {
+    "home": "NK RADOMLJE",
+    "away": "NAFTA",
+    "tag": "🏰 Ana Kale (MBS 3)",
+    "target": "3.5 Alt (1,28)",
+    "saat": "20:00C"
   }
 ]
